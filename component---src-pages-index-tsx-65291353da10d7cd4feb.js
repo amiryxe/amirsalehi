@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkamirsalehi=self.webpackChunkamirsalehi||[]).push([[245],{2783:function(e,t,a){a.r(t),a.d(t,{Head:function(){return i}});var l=a(6540),n=a(6452);const i=()=>l.createElement("title",null,"امیر صالحی - سایت شخصی");t.default=()=>l.createElement(n.A,{pageTitle:"Home Page"},l.createElement("p",null,"this is my homepage"))}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-65291353da10d7cd4feb.js.map
