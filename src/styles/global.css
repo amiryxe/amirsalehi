@@ -20,6 +20,7 @@
 body {
   font-family: EstedadFont;
   color: var(--color-dark);
+  min-height: 100vh;
 }
 
 ::selection {
