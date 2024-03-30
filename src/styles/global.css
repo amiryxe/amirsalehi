@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-5 bg-[#0F172A] text-white font-semibold rounded-md shadow-md hover:bg-[#269C6B] focus:outline-none focus:ring;
-  }
-}
-
 @font-face {
   font-family: 'EstedadFont';
   font-weight: 100 900;
@@ -17,6 +11,27 @@
   src: url(/fonts/estedad/Estedad[KSHD,wght].woff2) format('woff2');
 }
 
+:root {
+  --color-dark: #0f172a;
+  --color-dark-hover: #3c4a71;
+  --color-primary: #e0ffc5;
+}
+
 body {
   font-family: EstedadFont;
+  color: var(--color-dark);
+}
+
+::selection {
+  background: var(--color-primary);
+}
+
+@layer components {
+  .btn-primary {
+    @apply py-1 px-5 bg-[color:var(--color-dark)] text-white font-semibold rounded-md shadow-sm hover:bg-[color:var(--color-dark-hover)] focus:transform focus:scale-50 transition-all duration-200;
+  }
+
+  .btn-link {
+    @apply py-1 px-3  font-semibold rounded-md hover:bg-[var(--color-primary)] transition-all duration-200;
+  }
 }
