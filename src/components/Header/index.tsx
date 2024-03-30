@@ -4,23 +4,28 @@ import { Link } from 'gatsby'
 
 export default function Header() {
   return (
-    <nav className="flex justify-between">
+    <nav className="flex justify-between items-center">
       <div className="flex items-center gap-8">
-        <StaticImage alt="Amir Salehi logo" src="../../images/logo.svg" />
+        <Link to="/" title="صفحه اصلی">
+          <StaticImage alt="Amir Salehi logo" src="../../images/logo.svg" />
+        </Link>
 
-        <ul className="flex gap-4">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
+        <div className="flex gap-8">
+          <Link to="/about">درباره من</Link>
+
+          <Link to="/articles">مقاله‌ها</Link>
+
+          <Link to="/cv">رزومه</Link>
+
+          <Link to="/projects">پروژه‌ها</Link>
+
+          <Link to="/learning">آموزش</Link>
+        </div>
       </div>
 
       <div>
         <Link to="/contact" className="btn-primary">
-          Contact
+          تماس با من
         </Link>
       </div>
     </nav>

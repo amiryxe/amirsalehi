@@ -7,3 +7,16 @@
     @apply py-2 px-5 bg-[#0F172A] text-white font-semibold rounded-md shadow-md hover:bg-[#269C6B] focus:outline-none focus:ring;
   }
 }
+
+@font-face {
+  font-family: 'EstedadFont';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/estedad/Estedad[KSHD,wght].woff2) format('woff2');
+}
+
+body {
+  font-family: EstedadFont;
+}
