@@ -15,24 +15,37 @@
   --color-dark: #0f172a;
   --color-dark-hover: #3c4a71;
   --color-primary: #e0ffc5;
+  --color-main-background: #ffffff;
+  --color-main-text: #0f172a;
 }
 
 body {
   font-family: EstedadFont;
-  color: var(--color-dark);
   min-height: 100vh;
+  background: var(--color-main-background);
+  color: var(--color-main-text);
+}
+
+.dark {
+  --color-main-background: #0f172a;
+  --color-main-text: #ffffff;
 }
 
 ::selection {
-  background: var(--color-primary);
+  background: #84cc16;
+}
+
+.light {
+  --color-main-background: #ffffff;
+  --color-main-text: #0f172a;
 }
 
 @layer components {
   .btn-primary {
-    @apply py-1 px-5 bg-[color:var(--color-dark)] text-white font-semibold rounded-md shadow-sm hover:bg-[color:var(--color-dark-hover)] focus:transform focus:scale-50 transition-all duration-200;
+    @apply py-1 px-5 bg-[color:var(--color-dark)] dark:bg-white dark:text-black dark:hover:bg-slate-300 text-white font-semibold rounded-md shadow-sm hover:bg-[color:var(--color-dark-hover)] focus:transform focus:scale-50 transition-all duration-200;
   }
 
   .btn-link {
-    @apply py-1 px-3  font-semibold rounded-md hover:bg-[var(--color-primary)] transition-all duration-200;
+    @apply py-1 px-3 font-semibold rounded-md hover:bg-lime-100 dark:hover:bg-lime-800 transition-all duration-200;
   }
 }

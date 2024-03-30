@@ -1,13 +1,14 @@
 import * as React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+import Logo from '../images/svg/logo.svg'
 
 export default function Header() {
   return (
     <nav className="flex justify-between items-center">
       <div className="flex items-center gap-8">
         <Link to="/" title="صفحه اصلی">
-          <StaticImage alt="Amir Salehi logo" src="../images/logo.svg" />
+          <Logo className="dark:fill-white" />
         </Link>
 
         <div className="flex gap-4">
