@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import Header from './Header'
 
 const Layout = ({ pageTitle, children }: { pageTitle: string; children: React.ReactNode }) => {
@@ -6,7 +7,7 @@ const Layout = ({ pageTitle, children }: { pageTitle: string; children: React.Re
     <div className="container mx-auto py-8" dir="rtl">
       <Header />
 
-      <main>
+      <main className="py-16">
         <h1>{pageTitle}</h1>
         {children}
       </main>
