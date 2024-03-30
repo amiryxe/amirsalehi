@@ -1,19 +1,11 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Header from './Header'
 
 const Layout = ({ pageTitle, children }: { pageTitle: string; children: React.ReactNode }) => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="container mx-auto py-8" dir="rtl">
+      <Header />
+
       <main>
         <h1>{pageTitle}</h1>
         {children}
