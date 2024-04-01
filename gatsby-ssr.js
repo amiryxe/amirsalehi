@@ -1,9 +1,13 @@
 import * as React from 'react'
 import { createElement } from "react"
 
+
 const applyDarkModeClass = `
 (function() {
   try {
+    
+    console.log(window.matchMedia('(prefers-color-scheme: dark)'))
+
     var mode = localStorage.getItem('darkmode');
 
     if (mode === 'dark' || (!('darkmode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -11,8 +15,6 @@ const applyDarkModeClass = `
     } else {
       document.documentElement.classList.remove('dark')
     }
-
-
   } catch (e) {}
 })();
 `;
