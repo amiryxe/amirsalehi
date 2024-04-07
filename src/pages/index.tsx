@@ -7,6 +7,7 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page">
       <p>this is my homepage</p>
+      <p>متن فارسی تستی</p>
     </Layout>
   )
 }
