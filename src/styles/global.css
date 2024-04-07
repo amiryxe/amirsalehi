@@ -51,3 +51,7 @@ body {
     @apply py-1 px-3 text-base rounded-md hover:bg-lime-100 dark:hover:bg-lime-800 transition-all duration-200;
   }
 }
+
+strong {
+  font-weight: 600;
+}
