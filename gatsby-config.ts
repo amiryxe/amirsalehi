@@ -14,6 +14,20 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     {
+      resolve: `gatsby-source-supabase`,
+      options: {
+        supabaseUrl: 'https://brusmtnlgjlgtxnwjmgk.supabase.co',
+        supabaseKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJydXNtdG5sZ2psZ3R4bndqbWdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI2MTAyODMsImV4cCI6MjAyODE4NjI4M30.5Kxo_9lfuzngA_7da7cCOIEmnYTkocE6CbV5NQaknTI',
+        types: [
+          {
+            type: 'contact',
+            query: (client: any) => client.from('contact').select('*'), //sync or async
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',

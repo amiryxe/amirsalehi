@@ -15,8 +15,8 @@ export default function Header() {
             درباره من
           </Link>
 
-          <Link to="/articles" className="btn-link">
-            مقاله‌ها
+          <Link to="/blog" className="btn-link">
+            بلاگ
           </Link>
 
           <Link to="/cv" className="btn-link">
