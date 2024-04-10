@@ -1,5 +1,11 @@
 import type { GatsbyConfig } from 'gatsby'
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+console.log(process.env.TEST)
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `امیر صالحی`,
