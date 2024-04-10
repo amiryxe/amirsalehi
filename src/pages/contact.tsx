@@ -56,17 +56,14 @@ const ContactPage = () => {
     <Layout pageTitle="تماس با من">
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-          <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+          <p className="mb-8 lg:mb-16 font-light text-center sm:text-xl">
             از طریق فرم زیر میتونید با من در ارتباط باشید. سعی می‌کنم در سریع‌ترین زمان پاسخگوی
             پیغام شما باشم :)
           </p>
 
           <form onSubmit={submitHandler} className="space-y-8">
             <div>
-              <label
-                htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
+              <label htmlFor="name" className="block mb-2 text-sm font-medium ">
                 نام شما
               </label>
               <input
@@ -77,10 +74,7 @@ const ContactPage = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
+              <label htmlFor="email" className="block mb-2 text-sm font-medium ">
                 ایمیل
               </label>
               <input
@@ -92,10 +86,7 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="phone"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
+              <label htmlFor="phone" className="block mb-2 text-sm font-medium ">
                 شماره همراه
               </label>
               <input
@@ -106,10 +97,7 @@ const ContactPage = () => {
               />
             </div>
             <div className="sm:col-span-2">
-              <label
-                htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-              >
+              <label htmlFor="message" className="block mb-2 text-sm font-medium">
                 پیام شما
               </label>
               <textarea
