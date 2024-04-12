@@ -43,7 +43,7 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply py-1 px-5 bg-[color:var(--color-dark)] dark:bg-white dark:text-black dark:hover:bg-slate-300 text-white font-semibold rounded-md shadow-sm hover:bg-[color:var(--color-dark-hover)] focus:transform focus:scale-50 transition-all duration-200;
+    @apply py-1 px-5 bg-[color:var(--color-dark)] dark:bg-white dark:text-black dark:hover:bg-slate-300 text-white font-semibold rounded-md shadow-sm hover:bg-[color:var(--color-dark-hover)] focus:transform focus:scale-90 transition-all duration-200;
   }
 
   .btn-link {
