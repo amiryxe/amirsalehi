@@ -1,8 +1,22 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import { MoonIcon } from '@heroicons/react/24/outline'
+
 import Logo from '../images/svg/logo.svg'
 
 export default function Header() {
+  const toggleTheme = () => {
+    const current = localStorage.getItem('theme')
+
+    if (current === 'dark') {
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = 'light'
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    }
+  }
+
   return (
     <nav className="flex justify-between items-center">
       <div className="flex items-center gap-8">
@@ -33,7 +47,11 @@ export default function Header() {
         </div>
       </div>
 
-      <div>
+      <div className="flex items-center gap-4">
+        <button type="button" onClick={toggleTheme}>
+          <MoonIcon className="h-5" />
+        </button>
+
         <Link to="/contact" className="btn-primary">
           تماس با من
         </Link>
