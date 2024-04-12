@@ -1,19 +1,23 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { MoonIcon } from '@heroicons/react/24/outline'
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 
 import Logo from '../images/svg/logo.svg'
 
 export default function Header() {
+  const [isDarkMode, setIsDarkMode] = React.useState<boolean>(localStorage.theme === 'dark')
+
   const toggleTheme = () => {
     const current = localStorage.getItem('theme')
 
     if (current === 'dark') {
       document.documentElement.classList.remove('dark')
       localStorage.theme = 'light'
+      setIsDarkMode(false)
     } else {
       document.documentElement.classList.add('dark')
       localStorage.theme = 'dark'
+      setIsDarkMode(true)
     }
   }
 
@@ -48,8 +52,8 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-4">
-        <button type="button" onClick={toggleTheme}>
-          <MoonIcon className="h-5" />
+        <button type="button" className="p-3" onClick={toggleTheme}>
+          {isDarkMode ? <SunIcon className="h-5" /> : <MoonIcon className="h-5" />}
         </button>
 
         <Link to="/contact" className="btn-primary">
