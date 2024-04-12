@@ -1,14 +1,10 @@
 import * as React from 'react'
 import { createElement } from "react"
 
-
 const applyDarkModeClass = `
 (function() {
   try {
-    
-    console.log(window.matchMedia('(prefers-color-scheme: dark)'))
-
-    var mode = localStorage.getItem('darkmode');
+    const mode = localStorage.getItem('darkmode');
 
     if (mode === 'dark' || (!('darkmode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark')
@@ -24,7 +20,9 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
     dangerouslySetInnerHTML: {
       __html: applyDarkModeClass,
     },
+    key: 'dark-mode-script'
   })
+
   setPreBodyComponents([script])
 
   setHeadComponents([
