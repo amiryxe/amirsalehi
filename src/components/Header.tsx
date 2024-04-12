@@ -5,7 +5,14 @@ import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import Logo from '../images/svg/logo.svg'
 
 export default function Header() {
-  const [isDarkMode, setIsDarkMode] = React.useState<boolean>(localStorage.theme === 'dark')
+  const [isDarkMode, setIsDarkMode] = React.useState<boolean>()
+
+  React.useEffect(() => {
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark')
+      setIsDarkMode(true)
+    }
+  })
 
   const toggleTheme = () => {
     const current = localStorage.getItem('theme')
