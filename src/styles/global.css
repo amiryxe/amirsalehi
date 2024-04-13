@@ -44,11 +44,15 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply py-1 px-5 bg-dark dark:bg-white dark:text-black dark:hover:bg-slate-300 text-white font-semibold rounded-md shadow-sm hover:bg-[color:var(--color-dark-hover)] focus:transform focus:scale-90 transition-all duration-200;
+    @apply py-1 px-5 bg-dark dark:bg-white dark:text-black dark:hover:bg-slate-300 text-white font-semibold rounded-sm shadow-sm hover:bg-[color:var(--color-dark-hover)] focus:transform focus:scale-90 transition-all duration-100;
   }
 
   .btn-link {
-    @apply py-1 px-3 text-base rounded-md hover:bg-main transition-all duration-200;
+    @apply py-1 px-3 text-base rounded-sm hover:bg-main transition-all duration-100 border-2 border-transparent;
+  }
+
+  .btn-link[aria-current='page'] {
+    @apply border-2 border-main;
   }
 }
 

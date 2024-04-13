@@ -2,10 +2,13 @@ import * as React from 'react'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+import MainBanner from '../components/MainBanner'
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home Page">
+    <Layout>
+      <MainBanner />
+
       <p>this is my homepage</p>
       <p>متن فارسی جدید</p>
     </Layout>

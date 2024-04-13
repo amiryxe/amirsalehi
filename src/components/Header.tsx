@@ -30,16 +30,12 @@ export default function Header() {
 
   return (
     <nav className="flex justify-between items-center">
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-10">
         <Link to="/" title="صفحه اصلی">
-          <Logo className="dark:fill-white" />
+          <Logo className="dark:fill-white hover:fill-lime-500 transition-all duration-200" />
         </Link>
 
-        <div className="flex gap-4">
-          <Link to="/about" className="btn-link">
-            درباره من
-          </Link>
-
+        <div className="flex gap-3">
           <Link to="/blog" className="btn-link">
             بلاگ
           </Link>
@@ -54,6 +50,10 @@ export default function Header() {
 
           <Link to="/learning" className="btn-link">
             آموزش
+          </Link>
+
+          <Link to="/about" className="btn-link">
+            درباره من
           </Link>
         </div>
       </div>
