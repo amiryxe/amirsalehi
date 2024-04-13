@@ -9,8 +9,11 @@ const IndexPage = () => {
     <Layout>
       <MainBanner />
 
-      <p>this is my homepage</p>
-      <p>متن فارسی جدید</p>
+      <p>
+        معمولا من رو در شبکه‌های اجتماعی مختلف با آی‌دی{' '}
+        <code className="font-mono text-lg px-2 text-lime-900 dark:text-lime-500">amiryxe</code>{' '}
+        می‌تونید پیدا کنید
+      </p>
     </Layout>
   )
 }
