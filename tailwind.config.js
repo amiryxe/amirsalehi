@@ -6,7 +6,12 @@ module.exports = {
   ],
   darkMode: 'selector',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'main': '#98ff6850',
+        'dark': '#0f172a',
+      }
+    },
     container: {
       center: true,
       screens: {
