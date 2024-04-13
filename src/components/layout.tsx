@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Layout = ({ pageTitle, children }: { pageTitle?: string; children: React.ReactNode }) => {
   return (
-    <div className="container py-8 flex flex-col h-screen" dir="rtl">
+    <div className="container py-8 flex flex-col min-h-screen" dir="rtl">
       <Header />
 
       <main className="py-16">

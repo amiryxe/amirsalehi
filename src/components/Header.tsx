@@ -32,7 +32,7 @@ export default function Header() {
     <nav className="flex justify-between items-center">
       <div className="flex items-center gap-10">
         <Link to="/" title="صفحه اصلی">
-          <Logo className="dark:fill-white hover:fill-lime-500 transition-all duration-200" />
+          <Logo className="dark:fill-white hover:fill-lime-500 transition-all duration-100" />
         </Link>
 
         <div className="flex gap-3">
