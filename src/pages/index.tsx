@@ -10,9 +10,9 @@ const IndexPage = () => {
       <MainBanner />
 
       <p>
-        معمولا من رو در شبکه‌های اجتماعی مختلف با آی‌دی{' '}
+        معمولا می‌تونید من رو در شبکه‌های اجتماعی مختلف با آی‌دی{' '}
         <code className="font-mono text-lg px-2 text-lime-900 dark:text-lime-500">amiryxe</code>{' '}
-        می‌تونید پیدا کنید
+        پیدا کنید
       </p>
     </Layout>
   )
