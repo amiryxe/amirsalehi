@@ -7,7 +7,6 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 const BlogPost = ({ data, children }: any) => {
-  console.log(data)
   const image = getImage(data.mdx.frontmatter.hero_image)
 
   return (
