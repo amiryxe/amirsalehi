@@ -21,6 +21,7 @@
     "@mdx-js/react": "^3.0.1",
     "autoprefixer": "^10.4.19",
     "gatsby": "^5.13.3",
+    "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",

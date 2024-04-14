@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { Disqus } from 'gatsby-plugin-disqus'
 
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
@@ -21,6 +22,19 @@ const BlogPost = ({ data, children }: any) => {
       </p>
 
       {children}
+
+      <Disqus
+        config={
+          /* Replace PAGE_URL with your post's canonical URL variable */
+          // url: 'PAGE_URL',
+          /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+          // identifier: 'PAGE_IDENTIFIER',
+          /* Replace PAGE_TITLE with the title of the page */
+          {
+            title: data.mdx.frontmatter.title,
+          }
+        }
+      />
     </Layout>
   )
 }
