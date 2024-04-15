@@ -56,10 +56,10 @@ export default function Header() {
     <nav className="flex justify-between items-center">
       <div className="flex items-center gap-10">
         <Link to="/" title="صفحه اصلی">
-          <Logo className="dark:fill-white hover:fill-lime-500 transition-all duration-100 max-sm:w-24" />
+          <Logo className="dark:fill-white hover:fill-lime-500 transition-all duration-100 max-lg:w-20" />
         </Link>
 
-        <div className="flex gap-3 items-center max-sm:hidden">
+        <div className="flex gap-3 items-center max-md:hidden max-lg:gap-2">
           {menuItems.map((item) => (
             <Link key={item.title} to={item.path} className="btn-link">
               {item.title}
@@ -68,17 +68,17 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="flex items-center gap-4 max-sm:gap-3">
-        <button type="button" className="p-3 max-sm:p-2" onClick={toggleTheme}>
+      <div className="flex items-center gap-4 max-md:gap-3">
+        <button type="button" className="p-3 max-md:p-2" onClick={toggleTheme}>
           {isDarkMode ? <SunIcon className="h-5" /> : <MoonIcon className="h-5" />}
         </button>
 
-        <Link to="/contact" className="btn-primary max-sm:text-sm max-sm:px-2">
+        <Link to="/contact" className="btn-primary max-md:text-sm max-md:px-2">
           تماس با من
         </Link>
 
         <button type="button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <Bars3Icon className="h-6 pr-1 hidden max-sm:block" />
+          <Bars3Icon className="h-6 pr-1 hidden max-md:block" />
         </button>
       </div>
 
