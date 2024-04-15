@@ -5,7 +5,7 @@ import Logo from '../images/svg/logo.svg'
 
 export default function Footer() {
   return (
-    <div className="mt-auto pt-8 border-t flex justify-between items-center dark:border-gray-700">
+    <div className="mt-auto pt-8 border-t flex justify-between items-center dark:border-gray-700 max-sm:pt-4">
       <p className="font-light text-sm">© 2024. تمامی حقوق محفوظ است</p>
 
       <div className="group">
