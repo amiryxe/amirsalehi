@@ -1,11 +1,35 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import Logo from '../images/svg/logo.svg'
 
+const menuItems = [
+  {
+    title: 'بلاگ',
+    path: '/blog',
+  },
+  {
+    title: 'رزومه',
+    path: '/cv',
+  },
+  {
+    title: 'پروژه‌ها',
+    path: '/projects',
+  },
+  {
+    title: 'آموزش',
+    path: '/learning',
+  },
+  {
+    title: 'درباره من',
+    path: '/about',
+  },
+]
+
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = React.useState<boolean>()
+  const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
 
   React.useEffect(() => {
     if (localStorage.theme === 'dark') {
@@ -35,37 +59,57 @@ export default function Header() {
           <Logo className="dark:fill-white hover:fill-lime-500 transition-all duration-100 max-sm:w-24" />
         </Link>
 
-        <div className="flex gap-3 items-center">
-          <Link to="/blog" className="btn-link">
-            بلاگ
-          </Link>
-
-          <Link to="/cv" className="btn-link">
-            رزومه
-          </Link>
-
-          <Link to="/projects" className="btn-link">
-            پروژه‌ها
-          </Link>
-
-          <Link to="/learning" className="btn-link">
-            آموزش
-          </Link>
-
-          <Link to="/about" className="btn-link">
-            درباره من
-          </Link>
+        <div className="flex gap-3 items-center max-sm:hidden">
+          {menuItems.map((item) => (
+            <Link key={item.title} to={item.path} className="btn-link">
+              {item.title}
+            </Link>
+          ))}
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
-        <button type="button" className="p-3" onClick={toggleTheme}>
+      <div className="flex items-center gap-4 max-sm:gap-3">
+        <button type="button" className="p-3 max-sm:p-2" onClick={toggleTheme}>
           {isDarkMode ? <SunIcon className="h-5" /> : <MoonIcon className="h-5" />}
         </button>
 
-        <Link to="/contact" className="btn-primary">
+        <Link to="/contact" className="btn-primary max-sm:text-sm max-sm:px-2">
           تماس با من
         </Link>
+
+        <button type="button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Bars3Icon className="h-6 pr-1 hidden max-sm:block" />
+        </button>
+      </div>
+
+      <div
+        className={`${
+          isMenuOpen ? 'block' : 'hidden'
+        } fixed top-0 left-0 w-full h-screen bg-slate-900/50 z-10 backdrop-blur-[2px]`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      <div
+        className={`${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } fixed top-0 left-0 h-screen bg-slate-900/90 z-10 duration-300 w-3/4 text-white`}
+      >
+        <button type="button" className="text-white p-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <XMarkIcon className="h-6" />
+        </button>
+
+        <div className="flex flex-col gap-4 p-4">
+          {menuItems.map((item) => (
+            <Link
+              key={item.title}
+              to={item.path}
+              className="btn-link text-center text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.title}
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
   )
