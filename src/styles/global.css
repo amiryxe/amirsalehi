@@ -52,7 +52,7 @@ body {
   }
 
   .btn-link[aria-current='page'] {
-    @apply border-2 border-main;
+    @apply border-2 border-main bg-main/20;
   }
 }
 

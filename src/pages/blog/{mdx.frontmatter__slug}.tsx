@@ -5,22 +5,25 @@ import { Disqus } from 'gatsby-plugin-disqus'
 
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
+import toJalali from '../../helpers/toJalali'
 
 const BlogPost = ({ data, children }: any) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>{data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image!} alt={data.mdx.frontmatter.hero_image_alt} />
-      <p>
-        Photo Credit:{' '}
-        <a href={data.mdx.frontmatter.hero_image_credit_link} target="_blank">
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
+    <Layout>
+      <h1 className="text-2xl">{data.mdx.frontmatter.title}</h1>
+      <em>{toJalali(data.mdx.frontmatter.date)}</em>
 
-      {children}
+      <div className="flex justify-center">
+        <GatsbyImage
+          image={image!}
+          alt={data.mdx.frontmatter.hero_image_alt}
+          className="m-3 rounded-md"
+        />
+      </div>
+
+      <div className="mb-16">{children}</div>
 
       <Disqus
         config={

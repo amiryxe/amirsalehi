@@ -3,25 +3,21 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
+import toJalali from '../../helpers/toJalali'
+import { ListBulletIcon, MinusIcon } from '@heroicons/react/24/outline'
 
 const BlogPage = ({ data }: any) => {
-  console.log(data)
-
   return (
-    <Layout pageTitle="My Blog Posts">
-      <p>My cool posts will go in here</p>
+    <Layout pageTitle="نوشته‌های من">
+      {data.allMdx.nodes.map((node: any) => (
+        <Link key={node.id} to={`/blog/${node.frontmatter.slug}`} className="mb-8 flex flex-col">
+          <h3 className="font-semibold before:content-[''] before:w-3 before:h-3 before:bg-lime-200 before:inline-block before:rounded-full before:ml-2">
+            {node.frontmatter.title}
+          </h3>
 
-      <ul>
-        {data.allMdx.nodes.map((node: any) => (
-          <Link key={node.id} to={`/blog/${node.frontmatter.slug}`}>
-            <li className="border-b-2">
-              <h3>{node.frontmatter.title}</h3>
-              <p>Posted: {node.frontmatter.date}</p>
-              <p>{node.excerpt}</p>
-            </li>
-          </Link>
-        ))}
-      </ul>
+          <em className="text-sm">{toJalali(node.frontmatter.date)}</em>
+        </Link>
+      ))}
     </Layout>
   )
 }
@@ -38,7 +34,6 @@ export const query = graphql`
           slug
         }
         id
-        excerpt
       }
     }
   }
