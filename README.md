@@ -6,5 +6,6 @@ Hi! I'm Amir 👋, a software developer interested in the world of JavaScript, a
 This project is a website launched based on Gatsby, which I generally used the following for its development:
 - Gatsby
 - MDX
+- GraphQL
 - Tailwind CSS
 - Github Pages

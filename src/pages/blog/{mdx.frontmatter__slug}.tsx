@@ -12,30 +12,23 @@ const BlogPost = ({ data, children }: any) => {
 
   return (
     <Layout>
-      <h1 className="text-2xl">{data.mdx.frontmatter.title}</h1>
+      <h1 className="text-2xl font-extrabold">{data.mdx.frontmatter.title}</h1>
       <em>{toJalali(data.mdx.frontmatter.date)}</em>
 
       <div className="flex justify-center">
         <GatsbyImage
           image={image!}
           alt={data.mdx.frontmatter.hero_image_alt}
-          className="m-3 rounded-md"
+          className="my-8 rounded-md"
         />
       </div>
 
-      <div className="mb-16">{children}</div>
+      <div className="mb-16 post">{children}</div>
 
       <Disqus
-        config={
-          /* Replace PAGE_URL with your post's canonical URL variable */
-          // url: 'PAGE_URL',
-          /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
-          // identifier: 'PAGE_IDENTIFIER',
-          /* Replace PAGE_TITLE with the title of the page */
-          {
-            title: data.mdx.frontmatter.title,
-          }
-        }
+        config={{
+          title: data.mdx.frontmatter.title,
+        }}
       />
     </Layout>
   )
@@ -48,8 +41,6 @@ export const query = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
-        hero_image_credit_link
-        hero_image_credit_text
         hero_image {
           childImageSharp {
             gatsbyImageData

@@ -59,3 +59,15 @@ body {
 strong {
   font-weight: 600;
 }
+
+.post h2 {
+  @apply text-2xl font-bold;
+}
+
+.post p {
+  @apply mb-6 text-lg text-justify;
+}
+
+.post a {
+  @apply text-lime-800 font-semibold;
+}
