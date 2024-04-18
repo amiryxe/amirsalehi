@@ -18,8 +18,8 @@ const menuItems = [
     path: '/projects',
   },
   {
-    title: 'آموزش',
-    path: '/learning',
+    title: 'ویدئوها',
+    path: '/videos',
   },
   {
     title: 'درباره من',
