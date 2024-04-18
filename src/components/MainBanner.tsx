@@ -9,7 +9,7 @@ export default function MainBanner() {
           سلام! من <strong className="font-extrabold">امیر</strong> هستم
         </h2>
 
-        <h3 className="sm:text-2xl text-sm font-normal text-gray-600 dark:text-gray-300">
+        <h3 className="sm:text-2xl text-sm text-gray-700 dark:text-gray-300">
           یک{' '}
           <strong className="font-extrabold text-lime-900 dark:text-lime-500">
             توسعه‌دهنده نرم‌افزار

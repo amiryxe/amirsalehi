@@ -1,8 +1,8 @@
 import * as React from 'react'
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
-import { Link, graphql } from 'gatsby'
 
 const BlogPage = ({ data }: any) => {
   console.log(data)
