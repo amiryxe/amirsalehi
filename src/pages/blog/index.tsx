@@ -22,7 +22,7 @@ const BlogPage = ({ data }: any) => {
   )
 }
 
-export const Head = () => <Seo title="My Blog Posts" />
+export const Head = () => <Seo title="نوشته‌های من در بلاگ" />
 
 export const query = graphql`
   query {

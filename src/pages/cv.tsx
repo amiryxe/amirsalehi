@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
+import Seo from '../components/seo'
 
 export default function CV() {
   return (
@@ -391,3 +392,5 @@ export default function CV() {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="رزومه" />
