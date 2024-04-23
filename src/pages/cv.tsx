@@ -6,14 +6,14 @@ export default function CV() {
   return (
     <Layout>
       <main className="hyphens-manual font-sans" dir="ltr">
-        <section className="p-3 my-auto mx-auto bg-gray-100 rounded-2xl border-4 border-gray-700 sm:p-9 md:p-16 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o xsm:p-8 print:bg-white md:max-w-letter md:h-letter lg:h-letter">
+        <section className="p-3 my-auto mx-auto bg-gray-100 rounded-2xl border-4 border-gray-700 sm:p-9 lg:p-16 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o xsm:p-8 print:bg-white md:max-w-letter md:h-letter lg:h-letter">
           <header className="inline-flex justify-between items-start mb-2 w-full align-top border-b-4 border-gray-300">
             <section className="block">
-              <h1 className="mb-0 text-5xl font-bold text-gray-700">Amir Salehi</h1>
-              <h2 className="m-0 ml-2 text-2xl font-semibold text-gray-700 leading-snugish">
+              <h1 className="mb-0 text-5xl max-sm:text-xl font-bold text-gray-700">Amir Salehi</h1>
+              <h2 className="m-0 ml-2 max-sm:m-0 text-2xl max-sm:text-sm font-semibold text-gray-700 leading-snugish">
                 Front End Developer
               </h2>
-              <h3 className="m-0 mt-2 ml-2 text-xl font-semibold text-gray-500 leading-snugish">
+              <h3 className="m-0 mt-2 ml-2 max-sm:m-0 max-sm:text-sm text-xl font-semibold text-gray-500 leading-snugish">
                 Isfahan, Iran
               </h3>
             </section>
@@ -23,12 +23,12 @@ export default function CV() {
                 src="../images/amir.png"
                 alt="amir pic"
                 quality={100}
-                className="max-sm:mt-6 w-32 mb-6"
+                className="max-sm:mt-6 w-32 mb-6 max-sm:w-24"
               />
             </section>
           </header>
 
-          <section className="col-gap-8 print:col-count-2 print:h-letter-col-full columns-2">
+          <section className="col-gap-8 print:col-count-2 print:h-letter-col-full columns-2 max-sm:columns-1">
             <section className="flex-col">
               <section className="pb-2 mt-4 mb-0 first:mt-0">
                 <section className="break-inside-avoid">
@@ -36,7 +36,7 @@ export default function CV() {
                     <ul className="pr-7 list-inside">
                       <li className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md">
                         <a href="tel:+989390483748">
-                          <span className="mr-5 text-lg font-semibold text-gray-700 leading-snugish">
+                          <span className="mr-5 text-lg max-sm:text-sm font-semibold text-gray-700 leading-snugish">
                             Phone:
                           </span>
                           +98<strong>9390483748</strong>
@@ -45,7 +45,7 @@ export default function CV() {
 
                       <li className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md print:">
                         <a href="https://linkedin.com/in/amiryxe" className="group" target="_blank">
-                          <span className="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+                          <span className="mr-2 text-lg max-sm:text-sm font-semibold text-gray-700 leading-snugish">
                             Linkedin:
                           </span>
                           linkedin.com/in/amiryxe
@@ -56,7 +56,7 @@ export default function CV() {
                       </li>
                       <li className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md">
                         <a href="https://github.com/amiryxe" className="group" target="_blank">
-                          <span className="mr-5 text-lg font-semibold text-gray-700 leading-snugish">
+                          <span className="mr-5 text-lg max-sm:text-sm font-semibold text-gray-700 leading-snugish">
                             Github:
                           </span>
                           amiryxe
@@ -67,7 +67,7 @@ export default function CV() {
                       </li>
                       <li className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md">
                         <a href="mailto:amiryxe@gmail.com" className="group">
-                          <span className="mr-8 text-lg font-semibold text-gray-700 leading-snugish">
+                          <span className="mr-8 text-lg max-sm:text-sm font-semibold text-gray-700 leading-snugish">
                             Email:
                           </span>
                           amiryxe@gmail.com
@@ -79,7 +79,7 @@ export default function CV() {
 
                       <li className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md print:">
                         <a href="https://amirsalehi.ir" className="group" target="_blank">
-                          <span className="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+                          <span className="mr-2 text-lg max-sm:text-sm font-semibold text-gray-700 leading-snugish">
                             Website:
                           </span>
                           AmirSalehi.ir
