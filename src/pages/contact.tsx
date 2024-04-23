@@ -81,7 +81,7 @@ const ContactPage = () => {
                 type="email"
                 id="email"
                 className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
-                placeholder="yourmail@mail.com"
+                placeholder="you@email.com"
                 dir="ltr"
               />
             </div>
