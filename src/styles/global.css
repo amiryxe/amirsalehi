@@ -69,5 +69,5 @@ strong {
 }
 
 .post a {
-  @apply text-lime-800 font-semibold;
+  @apply text-lime-700 hover:text-lime-900 font-semibold dark:text-lime-500 hover:dark:text-lime-400 underline decoration-wavy decoration-emerald-600 underline-offset-[5px] hover:decoration-amber-700 transition-all duration-200;
 }
