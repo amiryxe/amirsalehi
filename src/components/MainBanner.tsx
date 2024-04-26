@@ -5,9 +5,9 @@ export default function MainBanner() {
   return (
     <div className="relative sm:px-12 px-4 flex max-sm:flex-col justify-between items-center before:-z-10 before:bg-main before:w-3/4 before:h-[200px] before:absolute before:top-[50%] before:left-0 before:-translate-y-1/2">
       <div className="flex flex-col sm:gap-5 gap-3 sm:w-[28rem] max-sm:text-center">
-        <h2 className="sm:text-3xl text-xl">
+        <h1 className="sm:text-3xl text-xl">
           سلام! من <strong className="font-extrabold">امیر</strong> هستم 👋
-        </h2>
+        </h1>
 
         <h3 className="sm:text-2xl text-sm text-gray-700 dark:text-gray-300">
           یک{' '}
