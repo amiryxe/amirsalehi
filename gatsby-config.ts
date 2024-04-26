@@ -4,16 +4,11 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log(process.env.TEST)
-
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `امیر صالحی`,
     siteUrl: `https://amirsalehi.ir`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
     'gatsby-plugin-postcss',
@@ -48,9 +43,6 @@ const config: GatsbyConfig = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 590,
             },
           },
