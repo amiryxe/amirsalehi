@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import toJalali from '../../helpers/toJalali'
-import { ListBulletIcon, MinusIcon } from '@heroicons/react/24/outline'
 
 const BlogPage = ({ data }: any) => {
   return (
