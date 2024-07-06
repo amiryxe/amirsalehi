@@ -15,13 +15,15 @@ const BlogPost = ({ data, children }: any) => {
       <h1 className="text-2xl font-extrabold">{data.mdx.frontmatter.title}</h1>
       <em>{toJalali(data.mdx.frontmatter.date)}</em>
 
-      <div className="flex justify-center">
-        <GatsbyImage
-          image={image!}
-          alt={data.mdx.frontmatter.hero_image_alt}
-          className="my-8 rounded-md"
-        />
-      </div>
+      {image && (
+        <div className="flex justify-center">
+          <GatsbyImage
+            image={image!}
+            alt={data.mdx.frontmatter.hero_image_alt}
+            className="my-8 rounded-md"
+          />
+        </div>
+      )}
 
       <div className="mb-16 post">{children}</div>
 
