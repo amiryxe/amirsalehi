@@ -21,7 +21,7 @@ client.beforeSend = function (url, options: any) {
 const BlogPost = ({ data, children, pageContext }: any) => {
   const [loading, setLoading] = useState(false)
   const [alert, setAlert] = useState('')
-  const [comments, setComments] = useState<any>(null)
+  const [comments, setComments] = useState<any>([])
 
   const image = getImage(data.mdx.frontmatter.hero_image)
   const { categories } = data.mdx.frontmatter
@@ -156,7 +156,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
 
       {alert && <p>{alert}</p>}
 
-      {comments && (
+      {comments?.length > 0 && (
         <div className="mt-12">
           <hr className="my-4" />
           {comments.map((comment: any) => (
