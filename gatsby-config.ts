@@ -15,12 +15,6 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `amirsalehi`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',
