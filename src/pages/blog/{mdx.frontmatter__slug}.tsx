@@ -21,9 +21,22 @@ client.beforeSend = function (url, options: any) {
 const BlogPost = ({ data, children, pageContext }: any) => {
   const [loading, setLoading] = useState(false)
   const [alert, setAlert] = useState('')
+  const [comments, setComments] = useState<any>(null)
 
   const image = getImage(data.mdx.frontmatter.hero_image)
   const { categories } = data.mdx.frontmatter
+
+  React.useEffect(() => {
+    const getData = async () => {
+      const res = await client
+        .collection('comments')
+        .getFullList({ filter: `postSlug="${pageContext.frontmatter__slug}"` })
+
+      setComments(res)
+    }
+
+    getData()
+  }, [])
 
   const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -75,7 +88,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
       <div className="mb-16 post">{children}</div>
 
       <div className="flex gap-4">
-        دسته‌بندی‌ها:{' '}
+        دسته‌بندی‌ها:
         <div className="flex gap-2">
           {categories.map((category: any) => (
             <Link
@@ -90,51 +103,73 @@ const BlogPost = ({ data, children, pageContext }: any) => {
       </div>
 
       <form onSubmit={submitHandler} className="space-y-8 mt-12">
-        <div>
-          <label htmlFor="name" className="block mb-2 text-sm font-medium ">
-            نام شما
-          </label>
-          <input
-            type="text"
-            id="name"
-            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
-          />
+        <div className="flex gap-4">
+          <div className="sm:w-1/2 flex flex-col gap-5">
+            <div>
+              <label htmlFor="name" className="block mb-2 text-sm font-medium ">
+                نام شما
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block mb-2 text-sm font-medium ">
+                ایمیل
+              </label>
+              <input
+                type="text"
+                id="email"
+                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                placeholder="you@email.com"
+                dir="ltr"
+              />
+            </div>
+          </div>
+
+          <div className="sm:w-full">
+            <div className="sm:col-span-2">
+              <label htmlFor="text" className="block mb-2 text-sm font-medium">
+                متن دیدگاه
+              </label>
+              <textarea
+                required
+                id="text"
+                rows={6}
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
+                placeholder="متن دیدگاه خود را وارد کنید..."
+              ></textarea>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <label htmlFor="email" className="block mb-2 text-sm font-medium ">
-            ایمیل
-          </label>
-          <input
-            type="text"
-            id="email"
-            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
-            placeholder="you@email.com"
-            dir="ltr"
-          />
-        </div>
-
-        <div className="sm:col-span-2">
-          <label htmlFor="text" className="block mb-2 text-sm font-medium">
-            متن دیدگاه
-          </label>
-          <textarea
-            required
-            id="text"
-            rows={6}
-            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
-            placeholder="متن دیدگاه خود را وارد کنید..."
-          ></textarea>
-        </div>
         <button
           type="submit"
           className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-gray-700 sm:w-fit hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
         >
           {loading ? 'در حال ارسال...' : 'ارسال دیدگاه'}
         </button>
-
-        {alert && <p>{alert}</p>}
       </form>
+
+      {alert && <p>{alert}</p>}
+
+      {comments && (
+        <div className="mt-12">
+          <hr className="my-4" />
+          {comments.map((comment: any) => (
+            <div key={comment.id} className="mb-4 border border-gray-200 rounded-md p-3">
+              <div className="flex justify-between">
+                <h3 className="font-bold">{comment.name}</h3>
+                <em>{toJalali(comment.created)}</em>
+              </div>
+              <p>{comment.text}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </Layout>
   )
 }
