@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkamirsalehi=self.webpackChunkamirsalehi||[]).push([[970],{4748:function(e,t,a){a.r(t),a.d(t,{Head:function(){return u}});var l=a(6540),n=a(4387);const u=()=>l.createElement("title",null,"About Me");t.default=()=>l.createElement(n.A,{pageTitle:"About Page"},l.createElement("p",null,"this is my about page"))}}]);
-//# sourceMappingURL=component---src-pages-about-tsx-63c6fd1624e1eb94e2f6.js.map
