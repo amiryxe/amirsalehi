@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Disqus } from 'gatsby-plugin-disqus'
 
@@ -9,6 +9,7 @@ import toJalali from '../../helpers/toJalali'
 
 const BlogPost = ({ data, children }: any) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
+  const { categories } = data.mdx.frontmatter
 
   return (
     <Layout>
@@ -26,6 +27,17 @@ const BlogPost = ({ data, children }: any) => {
       )}
 
       <div className="mb-16 post">{children}</div>
+
+      <div className="flex gap-4">
+        دسته‌بندی‌ها:{' '}
+        <div className="flex gap-2">
+          {categories.map((category: any) => (
+            <Link className="font-bold underline" to={'/categories/' + category.slug}>
+              {category.name}
+            </Link>
+          ))}
+        </div>
+      </div>
 
       <Disqus
         config={{
@@ -47,6 +59,10 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData
           }
+        }
+        categories {
+          name
+          slug
         }
       }
     }
