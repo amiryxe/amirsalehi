@@ -22,7 +22,7 @@ const CategoryPage = ({ data, pageContext }: any) => {
 }
 
 export const query = graphql`
-  query ($slug: String!) {
+  query ($slug: String) {
     allMdx(filter: { frontmatter: { categories: { elemMatch: { slug: { eq: $slug } } } } }) {
       nodes {
         id
