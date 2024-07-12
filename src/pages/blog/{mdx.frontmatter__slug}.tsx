@@ -30,7 +30,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
     const getData = async () => {
       const res = await client
         .collection('comments')
-        .getFullList({ filter: `postSlug="${pageContext.frontmatter__slug}"` })
+        .getFullList({ filter: `postSlug="${pageContext.frontmatter__slug}"&&isApproved=true` })
 
       setComments(res)
     }
