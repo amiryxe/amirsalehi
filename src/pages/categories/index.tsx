@@ -5,8 +5,6 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 const CategoryPage = ({ data, pageContext }: any) => {
-  console.log(data)
-
   const { category, slug } = pageContext
   const posts = data.allMdx.nodes
 
