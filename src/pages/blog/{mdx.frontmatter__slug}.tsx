@@ -32,7 +32,11 @@ const BlogPost = ({ data, children }: any) => {
         دسته‌بندی‌ها:{' '}
         <div className="flex gap-2">
           {categories.map((category: any) => (
-            <Link className="font-bold underline" to={'/categories/' + category.slug}>
+            <Link
+              key={category.slug}
+              className="font-bold underline"
+              to={'/categories/' + category.slug}
+            >
               {category.name}
             </Link>
           ))}
