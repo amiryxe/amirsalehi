@@ -103,7 +103,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
       </div>
 
       <form onSubmit={submitHandler} className="space-y-8 mt-12">
-        <div className="flex gap-4">
+        <div className="flex gap-4 max-sm:flex-col">
           <div className="sm:w-1/2 flex flex-col gap-5">
             <div>
               <label htmlFor="name" className="block mb-2 text-sm font-medium ">
