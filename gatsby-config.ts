@@ -28,7 +28,26 @@ const config: GatsbyConfig = {
         },
       },
     },
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        mdxOptions: {
+          remarkPlugins: [
+            [
+              require('gatsby-remark-vscode').remarkPlugin,
+              {
+                theme: {
+                  default: 'Quiet Light',
+                  parentSelector: {
+                    'html[class=dark]': 'Monokai',
+                  },
+                },
+              },
+            ],
+          ],
+        },
+      },
+    },
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-transformer-remark`,

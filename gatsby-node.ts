@@ -2,7 +2,7 @@ const path = require('path')
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode }: any) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'Mdx') {
@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }: any) => {
   const { createPage } = actions
 
   const result = await graphql(`
@@ -46,9 +46,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Extract all unique categories
   const categories = new Map()
-  posts.forEach((post) => {
+  posts.forEach((post: any) => {
     if (post.frontmatter.categories) {
-      post.frontmatter.categories.forEach((category) => {
+      post.frontmatter.categories.forEach((category: any) => {
         categories.set(category.slug, category.name)
       })
     }
