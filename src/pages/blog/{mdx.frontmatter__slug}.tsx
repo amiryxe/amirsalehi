@@ -90,7 +90,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
       <div className="flex gap-4">
         دسته‌بندی‌ها:
         <div className="flex gap-2">
-          {categories.map((category: any) => (
+          {categories?.map((category: any) => (
             <Link
               key={category.slug}
               className="font-bold underline"
