@@ -65,7 +65,7 @@ strong {
 }
 
 .post p {
-  @apply mb-6 text-lg leading-10 font-normal;
+  @apply mb-8 text-lg leading-10 font-normal;
 }
 
 .post a {
