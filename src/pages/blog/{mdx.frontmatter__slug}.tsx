@@ -176,7 +176,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
 
 export const query = graphql`
   query ($id: String) {
-    mdx(id: { eq: $id }, filter: { frontmatter: { type: { ne: "project" } } }) {
+    mdx(id: { eq: $id }) {
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
