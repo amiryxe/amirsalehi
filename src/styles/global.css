@@ -65,7 +65,7 @@ strong {
 }
 
 .post p {
-  @apply mb-6 text-lg text-justify leading-10 font-normal;
+  @apply mb-6 text-lg leading-10 font-normal;
 }
 
 .post a {
@@ -74,4 +74,12 @@ strong {
 
 pre {
   direction: ltr;
+  @apply mb-8;
+}
+
+code {
+  display: inline-block;
+  direction: ltr;
+
+  @apply text-emerald-800 dark:text-emerald-200;
 }
