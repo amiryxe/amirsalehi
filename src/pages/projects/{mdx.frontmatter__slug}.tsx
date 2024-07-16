@@ -7,8 +7,6 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 const ProjectPage = ({ data, children, pageContext }: any) => {
-  console.log(data)
-
   return (
     <Layout>
       <h1 className="text-2xl font-extrabold">{data.mdx.frontmatter.title}</h1>
