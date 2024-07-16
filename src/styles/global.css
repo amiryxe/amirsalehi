@@ -72,6 +72,10 @@ strong {
   @apply text-lime-700 hover:text-lime-900 font-semibold dark:text-lime-500 hover:dark:text-lime-400 underline decoration-1 decoration-wavy decoration-[#46aa44d2] underline-offset-[5px] hover:decoration-amber-500;
 }
 
+.post ul {
+  @apply list-disc list-inside mb-6 ps-4;
+}
+
 pre {
   direction: ltr;
   @apply mb-8;
