@@ -25,7 +25,10 @@ export const Head = () => <Seo title="نوشته‌های من در بلاگ" />
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { type: { ne: "project" } } }
+    ) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
