@@ -20,7 +20,7 @@ const ProjectPage = ({ data, children, pageContext }: any) => {
 
 export const query = graphql`
   query ($id: String) {
-    mdx(id: { eq: $id }) {
+    mdx(id: { eq: $id }, type: { eq: "project" }) {
       frontmatter {
         title
       }
