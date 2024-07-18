@@ -65,7 +65,11 @@ strong {
 }
 
 .post h2 {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold mb-2;
+}
+
+.post h3 {
+  @apply text-xl font-bold mb-2;
 }
 
 .post p {
@@ -88,6 +92,7 @@ pre {
 code {
   display: inline-block;
   direction: ltr;
+  word-spacing: 0;
 
   @apply text-emerald-800 dark:text-emerald-200;
 }
