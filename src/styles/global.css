@@ -60,6 +60,10 @@ strong {
   font-weight: 600;
 }
 
+.post {
+  word-spacing: 2px;
+}
+
 .post h2 {
   @apply text-2xl font-bold;
 }
