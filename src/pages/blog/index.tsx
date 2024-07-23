@@ -9,12 +9,8 @@ const BlogPage = ({ data }: any) => {
   return (
     <Layout pageTitle="نوشته‌های من">
       {data.allMdx.nodes.map((node: any) => (
-        <>
-          <Link
-            key={node.id}
-            to={`/blog/${node.frontmatter.slug}`}
-            className="mb-8 flex-col inline-flex"
-          >
+        <div key={node.id}>
+          <Link to={`/blog/${node.frontmatter.slug}`} className="mb-8 flex-col inline-flex">
             <h3
               className="font-semibold before:content-[''] before:w-3 before:h-3 before:bg-lime-200 
             before:inline-block before:rounded-full before:ml-2 max-sm:flex max-sm:before:mt-[.6rem] 
@@ -27,7 +23,7 @@ const BlogPage = ({ data }: any) => {
           </Link>
 
           <br />
-        </>
+        </div>
       ))}
     </Layout>
   )
