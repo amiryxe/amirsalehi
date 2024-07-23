@@ -6,10 +6,6 @@ src/gatsby-types.d.ts
 .env.development
 .env.production
 
-/blog/*
-!/blog/
-!/blog/.gitkeep
-
-/projects/*
-!/projects/
-!/projects/.gitkeep
+/storage/*
+!/storage/
+!/storage/.gitkeep

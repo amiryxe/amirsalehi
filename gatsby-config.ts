@@ -82,15 +82,8 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: `projects`,
-        path: `${__dirname}/projects`,
+        name: `storage`,
+        path: `${__dirname}/storage`,
       },
     },
   ],

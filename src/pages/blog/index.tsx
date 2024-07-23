@@ -9,13 +9,25 @@ const BlogPage = ({ data }: any) => {
   return (
     <Layout pageTitle="نوشته‌های من">
       {data.allMdx.nodes.map((node: any) => (
-        <Link key={node.id} to={`/blog/${node.frontmatter.slug}`} className="mb-8 flex flex-col">
-          <h3 className="font-semibold before:content-[''] before:w-3 before:h-3 before:bg-lime-200 before:inline-block before:rounded-full before:ml-2">
-            {node.frontmatter.title}
-          </h3>
+        <>
+          <Link
+            key={node.id}
+            to={`/blog/${node.frontmatter.slug}`}
+            className="mb-8 flex-col inline-flex"
+          >
+            <h3
+              className="font-semibold before:content-[''] before:w-3 before:h-3 before:bg-lime-200 
+            before:inline-block before:rounded-full before:ml-2 max-sm:flex max-sm:before:mt-[.6rem] 
+            max-sm:before:h-auto max-sm:before:w-2"
+            >
+              <span className="w-full">{node.frontmatter.title}</span>
+            </h3>
 
-          <em className="text-sm">{toJalali(node.frontmatter.date)}</em>
-        </Link>
+            <em className="text-sm max-sm:indent-5">{toJalali(node.frontmatter.date)}</em>
+          </Link>
+
+          <br />
+        </>
       ))}
     </Layout>
   )

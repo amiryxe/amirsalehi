@@ -11,7 +11,7 @@ const CategoryPage = ({ data, pageContext }: any) => {
   return (
     <Layout pageTitle={`نوشته‌های مربوط به دسته‌بندی "${category}":`}>
       {posts.map((post: any) => (
-        <Link key={post.id} to={'/blog' + post.fields.slug} className="mb-4 flex flex-col">
+        <Link key={post.id} to={'/blog/' + post.frontmatter.slug} className="mb-4 flex flex-col">
           <h3 className="font-semibold before:content-[''] before:w-3 before:h-3 before:bg-lime-200 before:inline-block before:rounded-full before:ml-2">
             {post.frontmatter.title}
           </h3>
@@ -28,8 +28,6 @@ export const query = graphql`
         id
         frontmatter {
           title
-        }
-        fields {
           slug
         }
       }
