@@ -84,6 +84,10 @@ strong {
   @apply list-disc list-inside mb-6 ps-4;
 }
 
+.post ol {
+  @apply list-decimal mb-6 ps-12;
+}
+
 pre {
   direction: ltr;
   @apply mb-8;
