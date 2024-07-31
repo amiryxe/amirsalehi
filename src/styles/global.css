@@ -94,9 +94,8 @@ pre {
 }
 
 p code {
-  display: inline-block;
   direction: ltr;
   word-spacing: 0;
 
-  @apply bg-gray-200/60 inline text-dark rounded-sm px-2;
+  @apply bg-gray-200/55 text-dark rounded-sm px-1 inline-block h-fit leading-6;
 }
