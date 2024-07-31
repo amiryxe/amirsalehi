@@ -11,7 +11,7 @@ const IndexPage = () => {
 
       <p>
         معمولا در شبکه‌های اجتماعی مختلف با آی‌دی{' '}
-        <code className="font-mono text-lg px-1 text-lime-900 dark:text-lime-500">amiryxe</code>
+        <code className="font-mono text-lg px-1 text-lime-900 dark:text-dark mx-2">amiryxe</code>
         حضور دارم
       </p>
     </Layout>

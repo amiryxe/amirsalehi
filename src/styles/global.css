@@ -12,7 +12,7 @@
 }
 
 :root {
-  --color-dark: #0f172a;
+  --color-dark: #161920;
   --color-dark-hover: #3c4a71;
   --color-primary: #98ff6850;
   --color-main-background: #ffffff;
@@ -30,7 +30,7 @@ body {
 }
 
 .dark {
-  --color-main-background: #0f172a;
+  --color-main-background: #161920;
   --color-main-text: #ffffff;
 }
 
@@ -40,7 +40,7 @@ body {
 
 .light {
   --color-main-background: #ffffff;
-  --color-main-text: #0f172a;
+  --color-main-text: #161920;
 }
 
 @layer components {
