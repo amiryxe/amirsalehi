@@ -19,6 +19,6 @@ const IndexPage = () => {
 }
 
 // You'll learn about this in the next task, just copy it for now
-export const Head = () => <Seo title="درباره من" />
+export const Head = () => <Seo title="امیر صالحی - توسعه‌دهنده نرم‌افزار" />
 
 export default IndexPage

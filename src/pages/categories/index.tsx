@@ -9,10 +9,10 @@ const CategoryPage = ({ data, pageContext }: any) => {
   const posts = data.allMdx.nodes
 
   return (
-    <Layout pageTitle={`نوشته‌های مربوط به دسته‌بندی "${category}":`}>
+    <Layout pageTitle={`نوشته‌های مربوط به دسته‌بندی ${category}:`}>
       {posts.map((post: any) => (
         <Link key={post.id} to={'/blog/' + post.frontmatter.slug} className="mb-4 flex flex-col">
-          <h3 className="font-semibold before:content-[''] before:w-3 before:h-3 before:bg-lime-200 before:inline-block before:rounded-full before:ml-2">
+          <h3 className="before:content-[''] before:w-3 before:h-3 before:bg-lime-200 before:inline-block before:rounded-full before:ml-4">
             {post.frontmatter.title}
           </h3>
         </Link>

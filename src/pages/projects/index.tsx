@@ -22,7 +22,7 @@ const ProjectsPage = ({ data }: any) => {
   )
 }
 
-export const Head = () => <Seo title="نوشته‌های من در بلاگ" />
+export const Head = () => <Seo title="پروژه‌های امیر صالحی" />
 
 export const query = graphql`
   query {

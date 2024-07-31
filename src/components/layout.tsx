@@ -25,7 +25,7 @@ const Layout = ({ pageTitle, children }: { pageTitle?: string; children: React.R
       <Header />
 
       <main className="py-16 max-sm:py-8">
-        {pageTitle && <h1 className="font-bold mb-8 text-lg">{pageTitle}</h1>}
+        {pageTitle && <h1 className="font-bold mb-10 text-xl">{pageTitle}</h1>}
         {children}
       </main>
 
