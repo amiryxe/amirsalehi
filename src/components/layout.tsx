@@ -7,7 +7,7 @@ const Layout = ({ pageTitle, children }: { pageTitle?: string; children: React.R
   return (
     <div className="container py-8 flex flex-col min-h-screen max-sm:py-2" dir="rtl">
       <svg
-        className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-multiply left-0 top-0"
+        className="pointer-events-none absolute h-full isolate opacity-50 mix-blend-multiply dark:mix-blend-color-dodge dark:opacity-30 left-0 top-0"
         width="100%"
         height="100%"
       >
