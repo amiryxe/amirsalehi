@@ -5,7 +5,7 @@ export default function MainBanner() {
   return (
     <div
       className="relative sm:px-12 px-4 flex max-sm:flex-col justify-between items-center 
-    before:-z-10 before:bg-main before:w-3/4 
+    before:-z-10 before:bg-main before:w-3/4 before:rounded-sm 
     before:h-[200px] before:absolute before:top-[50%] before:left-0 before:-translate-y-1/2 max-md:before:hidden max-sm:my-8"
     >
       <div className="flex flex-col sm:gap-5 gap-3 sm:w-[28rem] max-sm:text-center">
@@ -23,7 +23,13 @@ export default function MainBanner() {
         </h3>
       </div>
 
-      <StaticImage src="../images/amir.png" alt="amir pic" quality={100} className="max-sm:mt-6" />
+      <StaticImage
+        src="../images/amir.png"
+        alt="amir pic"
+        quality={100}
+        width={420}
+        className="max-sm:mt-6"
+      />
     </div>
   )
 }
