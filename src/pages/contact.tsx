@@ -54,71 +54,69 @@ const ContactPage = () => {
 
   return (
     <Layout pageTitle="تماس با من">
-      <section className="bg-white dark:bg-gray-900">
-        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-          <p className="mb-8 lg:mb-16 font-light text-center sm:text-xl">
-            از طریق فرم زیر میتونید با من در ارتباط باشید. سعی می‌کنم در سریع‌ترین زمان پاسخگوی
-            پیغام شما باشم :)
-          </p>
+      <div className="mx-auto max-w-screen-md">
+        <p className="mb-6 lg:mb-10 text-center">
+          از طریق فرم زیر میتونید با من در ارتباط باشید. سعی می‌کنم در سریع‌ترین زمان پاسخگوی پیغام
+          شما باشم :)
+        </p>
 
-          <form onSubmit={submitHandler} className="space-y-8">
-            <div>
-              <label htmlFor="name" className="block mb-2 text-sm font-medium ">
-                نام شما
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
-              />
-            </div>
+        <form onSubmit={submitHandler} className="space-y-8">
+          <div>
+            <label htmlFor="name" className="block mb-2 text-sm ">
+              نام شما
+            </label>
+            <input
+              type="text"
+              id="name"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+            />
+          </div>
 
-            <div>
-              <label htmlFor="email" className="block mb-2 text-sm font-medium ">
-                ایمیل
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
-                placeholder="you@email.com"
-                dir="ltr"
-              />
-            </div>
-            <div>
-              <label htmlFor="phone" className="block mb-2 text-sm font-medium ">
-                شماره همراه
-              </label>
-              <input
-                type="text"
-                id="phone"
-                dir="ltr"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
-              />
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="message" className="block mb-2 text-sm font-medium">
-                پیام شما
-              </label>
-              <textarea
-                required
-                id="message"
-                rows={6}
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
-                placeholder="متن پیام خود را وارد کنید..."
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-gray-700 sm:w-fit hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-            >
-              {loading ? 'در حال ارسال...' : 'ارسال پیام'}
-            </button>
+          <div>
+            <label htmlFor="email" className="block mb-2 text-sm ">
+              ایمیل
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+              placeholder="you@email.com"
+              dir="ltr"
+            />
+          </div>
+          <div>
+            <label htmlFor="phone" className="block mb-2 text-sm ">
+              شماره همراه
+            </label>
+            <input
+              type="text"
+              id="phone"
+              dir="ltr"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="message" className="block mb-2 text-sm">
+              پیام شما
+            </label>
+            <textarea
+              required
+              id="message"
+              rows={6}
+              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
+              placeholder="متن پیام خود را وارد کنید..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="py-3 px-5 text-sm text-center text-white rounded-lg bg-gray-700 sm:w-fit hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          >
+            {loading ? 'در حال ارسال...' : 'ارسال پیام'}
+          </button>
 
-            {alert && <p>{alert}</p>}
-          </form>
-        </div>
-      </section>
+          {alert && <p>{alert}</p>}
+        </form>
+      </div>
     </Layout>
   )
 }
