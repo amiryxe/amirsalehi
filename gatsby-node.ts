@@ -55,7 +55,7 @@ exports.createPages = async ({ graphql, actions }: any) => {
   })
 
   // Create a page for each category
-  const categoryTemplate = path.resolve(`src/pages/categories/{slug}.tsx`)
+  const categoryTemplate = path.resolve(`src/pages/categories/slug.tsx`)
   categories.forEach((name, slug) => {
     createPage({
       path: `/categories/${slug}/`,
