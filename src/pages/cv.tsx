@@ -6,7 +6,7 @@ export default function CV() {
   return (
     <Layout>
       <a
-        href="/cv/AmirSalehi-EN-CV-2024-04-23.pdf"
+        href="/cv/AmirSalehi-EN-CV-2024-08-25.pdf"
         target="_blank"
         className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
       >
