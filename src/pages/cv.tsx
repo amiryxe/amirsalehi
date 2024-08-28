@@ -133,25 +133,6 @@ export default function CV() {
             </div>
           </section>
 
-          {/* Education */}
-          <section className="mb-6">
-            <h2 className="text-xl font-semibold border-b border-gray-200 pb-1 print:border-b print:border-gray-200 print:text-black">
-              Education
-            </h2>
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold print:text-black">
-                Bachelor of Software Engineering | Ashrafi Esfahani University
-              </h3>
-              <p className=" print:text-black">2016 – 2018</p>
-            </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold print:text-black">
-                Associate of Computer Software | Mohajer University
-              </h3>
-              <p className=" print:text-black">2013 – 2015</p>
-            </div>
-          </section>
-
           {/* Projects */}
           <section className="mb-6 p-2 rounded-lg border border-gray-200 print:bg-transparent print:border-none print:p-0">
             <h2 className="text-xl font-semibold border-b border-gray-200 pb-1 print:border-b print:border-gray-200 print:text-black">
@@ -183,6 +164,25 @@ export default function CV() {
                 </a>
               </li>
             </ul>
+          </section>
+
+          {/* Education */}
+          <section className="mb-6">
+            <h2 className="text-xl font-semibold border-b border-gray-200 pb-1 print:border-b print:border-gray-200 print:text-black">
+              Education
+            </h2>
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold print:text-black">
+                Bachelor of Software Engineering | Ashrafi Esfahani University
+              </h3>
+              <p className=" print:text-black">2016 – 2018</p>
+            </div>
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold print:text-black">
+                Associate of Computer Software | Mohajer University
+              </h3>
+              <p className=" print:text-black">2013 – 2015</p>
+            </div>
           </section>
 
           {/* Certificates */}
