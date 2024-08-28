@@ -20,11 +20,19 @@ export default function CV() {
             <h1 className="text-3xl font-extrabold print:text-black">Amir Salehi</h1>
             <p className="text-lg print:text-black">Front End Developer</p>
             <p className="mt-1 print:text-black">
-              Isfahan, Iran | Phone: +989390483748 | Email: amiryxe@gmail.com
+              Isfahan, Iran | Phone: +989390483748 | Email:{' '}
+              <a href="mailto:amiryxe@gmail.com">amiryxe@gmail.com</a>
             </p>
             <p className="print:text-black">
-              LinkedIn: linkedin.com/in/amiryxe | GitHub: github.com/amiryxe | Website:
-              AmirSalehi.ir
+              LinkedIn:{' '}
+              <a href="https://linkedin.com/in/amiryxe" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/amiryxe
+              </a>{' '}
+              | GitHub:{' '}
+              <a href="https://github.com/amiryxe" target="_blank" rel="noopener noreferrer">
+                github.com/amiryxe
+              </a>{' '}
+              | Website: <a href="https://amirsalehi.ir">AmirSalehi.ir</a>
             </p>
           </header>
 
