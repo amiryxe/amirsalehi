@@ -13,15 +13,15 @@ export default function PersianCV() {
 
             <div>
               <h1 className="font-black text-2xl">امیر صالحی</h1>
-              <h2>توسعه‌دهنده نرم افزارهای تحت وب</h2>
+              <h2>توسعه‌دهنده نرم‌افزارهای تحت وب</h2>
             </div>
           </div>
 
           <div className="text-left text-sm font-normal">
-            <h4 className="after:content-['-']">متولد ۱۳۷۳</h4>
-            <h4 className="after:content-['-']">ساکن اصفهان</h4>
-            <h4 className="after:content-['-']">متاهل</h4>
-            <h4 className="after:content-['-']">معافیت کفالت</h4>
+            <h4 className="after:content-['-'] after:mr-1">متولد ۱۳۷۳</h4>
+            <h4 className="after:content-['-'] after:mr-1">ساکن اصفهان</h4>
+            <h4 className="after:content-['-'] after:mr-1">متاهل</h4>
+            <h4 className="after:content-['-'] after:mr-1">معافیت کفالت</h4>
           </div>
         </header>
 
