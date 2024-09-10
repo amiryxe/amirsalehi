@@ -105,3 +105,9 @@ p code {
 
   @apply bg-gray-200/55 text-dark rounded-sm px-1 inline-block h-fit leading-6;
 }
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+}
