@@ -9,3 +9,8 @@ This project is a website launched based on Gatsby, which I generally used the f
 - GraphQL
 - Tailwind CSS
 - Github Pages
+
+## Installation
+- Create your `.env.development` and `.env.production` from `.env.sample` file.
+- npm install
+- npm run develop

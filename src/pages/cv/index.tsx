@@ -6,13 +6,23 @@ import Layout from '../../components/layout'
 export default function CV() {
   return (
     <Layout>
-      <a
-        href="/cv/AmirSalehi-EN-CV-2024-08-25.pdf"
-        target="_blank"
-        className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
-      >
-        دانلود نسخه PDF رزومه
-      </a>
+      <div className="flex gap-3">
+        <a
+          href="/cv/AmirSalehi-EN-CV-2024-08-25.pdf"
+          target="_blank"
+          className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
+        >
+          دانلود نسخه PDF رزومه | انگلیسی
+        </a>
+
+        <a
+          href="/cv/amirsalehi-persian-cv-shahrivar1403.pdf"
+          target="_blank"
+          className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
+        >
+          دانلود رزومه فارسی
+        </a>
+      </div>
 
       <main className="hyphens-manual font-sans" dir="ltr">
         <div className="mx-auto p-4 rounded-lg mt-4 print:rounded-none print:p-2 print:max-h-[12in] print:max-w-[10.2in] print:text-sm print:leading-tight">

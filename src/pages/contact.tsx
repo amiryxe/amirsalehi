@@ -44,7 +44,7 @@ const ContactPage = () => {
         phone.value = ''
         message.value = ''
       })
-      .catch((err) => {
+      .catch(() => {
         setAlert('خطا در ارسال پیام')
       })
       .finally(() => {
