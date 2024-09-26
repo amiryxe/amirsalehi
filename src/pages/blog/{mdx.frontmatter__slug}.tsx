@@ -8,6 +8,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import toJalali from '../../helpers/toJalali'
+import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 
 const url = process.env.POCKETBASE_URL
 const client = new PocketBase(url)
@@ -56,7 +57,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
       .collection('comments')
       .create(data)
       .then(() => {
-        setAlert('دیدگاه شما با موفقیت ارسال شد')
+        setAlert('دیدگاه شما با موفقیت ارسال شد و پس از تائید نمایش داده می‌شود')
 
         name.value = ''
         email.value = ''
@@ -154,7 +155,12 @@ const BlogPost = ({ data, children, pageContext }: any) => {
         </button>
       </form>
 
-      {alert && <p>{alert}</p>}
+      {alert && (
+        <p className="mt-4 flex gap-2 animate-[pulse_1s_linear_2_forwards]">
+          <CheckBadgeIcon className="w-6 text-green-500" />
+          {alert}
+        </p>
+      )}
 
       {comments?.length > 0 && (
         <div className="mt-12">
