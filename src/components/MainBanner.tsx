@@ -1,5 +1,6 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import * as React from 'react'
+import { Skills } from './Skills'
 
 export default function MainBanner() {
   return (
