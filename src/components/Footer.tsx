@@ -3,10 +3,12 @@ import { Link } from 'gatsby'
 
 import Logo from '../images/svg/logo.svg'
 
+const currentYear = new Date().getFullYear()
+
 export default function Footer() {
   return (
     <div className="mt-auto pt-8 border-t flex justify-between items-center dark:border-gray-700 max-sm:pt-4">
-      <p className="font-light text-sm">© 2024. تمامی حقوق محفوظ است</p>
+      <p className="font-light text-sm">© {currentYear}. تمامی حقوق محفوظ است</p>
 
       <div className="group">
         <Link to="/" title="صفحه اصلی" className="flex flex-col items-end ">
