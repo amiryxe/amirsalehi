@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'gatsby'
 
 import Seo from '../../components/seo'
 import Layout from '../../components/layout'
@@ -22,6 +23,13 @@ export default function CV() {
         >
           دانلود رزومه فارسی
         </a>
+
+        <Link
+          to="/cv/persian"
+          className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
+        >
+          مشاهده رزومه فارسی
+        </Link>
       </div>
 
       <main className="hyphens-manual font-sans" dir="ltr">
