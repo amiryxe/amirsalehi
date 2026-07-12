@@ -90,11 +90,30 @@ export default function CV() {
             <h2 className="text-xl font-semibold border-b border-gray-200 pb-1 print:border-b print:border-gray-200 print:text-black">
               Work Experience
             </h2>
+
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold print:text-black">
+                Senior Front End Developer | Qame
+              </h3>
+              <p className=" print:text-black">Aug 2025 - May 2026</p>
+              <ul className="list-disc list-inside mt-2 print:text-black">
+                <li>
+                Developed the Qame Progressive Web Application (PWA), including gamification features and related tools.
+                </li>
+                <li>
+                Developed and maintained the administration dashboard and brand management system.
+                </li>
+                <li>
+                Developed the Qame website and landing pages for sponsor campaigns.
+                </li>
+              </ul>
+            </div>
+
             <div className="mt-4">
               <h3 className="text-lg font-semibold print:text-black">
                 Full Stack Web Developer | Snowa
               </h3>
-              <p className=" print:text-black">June 2021 – Present</p>
+              <p className=" print:text-black">June 2021 – May 2025</p>
               <ul className="list-disc list-inside mt-2 print:text-black">
                 <li>
                   Developed organizational projects for Entekhab Group, including websites for

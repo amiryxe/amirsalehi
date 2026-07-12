@@ -164,7 +164,7 @@ export default function PersianCV() {
             <span className="w-2 h-2 bg-black block absolute -top-1 -right-1"></span>
             <span className="w-2 h-2 bg-black block absolute -bottom-1 -left-1"></span>
             <span className="w-2 h-2 bg-black block absolute -bottom-1 -right-1"></span>
-            توسعه‌دهنده نرم‌افزار با ۷ سال تجربه در زمینه وب و تمرکز بیشتر در توسعه Front End.
+            توسعه‌دهنده نرم‌افزار با ۹ سال تجربه در زمینه وب و تمرکز بیشتر در توسعه Front End.
             علاقه‌مند به جاوااسکریپت و تکنولوژی‌های جدید و همچنین مشتاق همکاری در پروژه‌های تیمی
             هستم.
           </section>
@@ -179,36 +179,51 @@ export default function PersianCV() {
             <div className="text-xs">
               <div className="flex justify-between">
                 <h3 className="font-semibold">
+                  :: توسعه‌دهنده ارشد فرانت‌اند در{' '}
+                  <span className="font-extrabold">Qame</span>
+                </h3>
+
+                <span className="border-b border-black border-dashed italic">
+                  مرداد ۱۴۰۴ - اردیبهشت ۱۴۰۵
+                </span>
+              </div>
+
+              <ul className="text-justify mt-1 pr-4 text-[12px]">
+                <li className="before:content-['-'] before:ml-1 mb-1">
+                  توسعه اپلیکیشن وب پیشرفته (PWA) Qame شامل امکانات گیمیفیکیشن و ابزارهای مرتبط.
+                </li>
+
+                <li className="before:content-['-'] before:ml-1 mb-1">
+                  توسعه و نگهداری داشبورد مدیریت و سامانه مدیریت برندها.
+                </li>
+
+                <li className="before:content-['-'] before:ml-1 mb-1">
+                  توسعه وب‌سایت Qame و لندینگ‌پیج‌های کمپین‌های اسپانسر.
+                </li>
+              </ul>
+            </div>
+
+            <div className="text-xs mt-4">
+              <div className="flex justify-between">
+                <h3 className="font-semibold">
                   :: توسعه‌دهنده فول‌استک در{' '}
                   <span className="font-extrabold">گروه صنعتی انتخاب (اسنوا)</span>
                 </h3>
 
                 <span className="border-b border-black border-dashed italic">
-                  خرداد ۱۴۰۰ - تاکنون
+                  خرداد ۱۴۰۰ - خرداد ۱۴۰۴
                 </span>
               </div>
 
               <p className="text-justify mt-1 font-normal">
-                در اسنوا به عنوان <strong>لید تیم فرانت</strong> فعالیت می‌کنم. پروژه‌هایی که در تیم
-                توسعه انجام می‌دهیم مربوط به نیازهای این سازمان و برندهای آن یعنی{' '}
-                <strong>اسنوا، دوو، بست و آردزیا</strong> است. خلاصه‌ای از فعالیت‌های عمده‌ای که
-                برای انتخاب انجام داده‌ام:
+                در اسنوا به عنوان <strong>لید تیم فرانت</strong> فعالیت می‌کردم. پروژه‌های سازمانی
+                گروه صنعتی انتخاب و برندهای <strong>اسنوا، دوو، بست و آردزیا</strong> را توسعه
+                دادم.
               </p>
 
               <ul className="text-justify mt-1 pr-4 text-[12px]">
                 <li className="before:content-['-'] before:ml-1 mb-1">
-                  <strong>سامانه GTM: </strong> یک سیستم نظارتی برای بازرسان اسنوا است که امکان
-                  بررسی و ثبت فروشگاه‌ها با استفاده از فرم‌های مختلف را فراهم می‌کند.
-                </li>
-
-                <li className="before:content-['-'] before:ml-1 mb-1">
-                  <strong>قرعه‌کشی زنده اسنوا: </strong> با نرم‌افزار مبتنی بر socket برگزار می‌شود
-                  که اپراتور می‌تواند آن را در لحظه انجام دهد و برندگان را نمایش دهد.
-                </li>
-
-                <li className="before:content-['-'] before:ml-1 mb-1">
-                  <strong>پروژه باشگاه مشتریان: </strong> شامل داشبورد مدیریت و کاربران است که با
-                  فریم‌ورک Next ساخته شده |{' '}
+                  لید توسعه پنل کاربری و داشبورد مدیریت باشگاه مشتریان اسنوا (Next.js) |{' '}
                   <a
                     href="https://club.snowa.ir"
                     target="_blank"
@@ -220,21 +235,11 @@ export default function PersianCV() {
                 </li>
 
                 <li className="before:content-['-'] before:ml-1 mb-1">
-                  <strong>سامانه چت آنلاین اسنوا: </strong> بر پایه Chatwoot ساخته شده و از پشتیبانی
-                  تاریخ شمسی و فونت فارسی برخوردار است.
+                  سامانه GTM، قرعه‌کشی زنده، چت آنلاین و مکان‌نمای فروشگاه‌ها.
                 </li>
 
                 <li className="before:content-['-'] before:ml-1 mb-1">
-                  <strong>مکان‌نمای فروشگاه‌های اسنوا: </strong> یک Locator برای جستجو و مسیریابی
-                  فروشگاه‌ها در ایران است |{' '}
-                  <a
-                    href="https://snowa.ir/chains"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-blue-800"
-                  >
-                    snowa.ir/chains
-                  </a>
+                  توسعه وب‌سایت‌ها و پروژه‌های سازمانی برندهای گروه انتخاب.
                 </li>
               </ul>
             </div>
