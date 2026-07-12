@@ -8,7 +8,7 @@ export default function CV() {
     <Layout>
       <div className="flex gap-3">
         <a
-          href="/cv/AmirSalehi-EN-CV-2024-08-25.pdf"
+          href="/cv/amirsalehi-en-cv-july2026.pdf"
           target="_blank"
           className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
         >
@@ -16,7 +16,7 @@ export default function CV() {
         </a>
 
         <a
-          href="/cv/amirsalehi-persian-cv-shahrivar1403.pdf"
+          href="/cv/amirsalehi-persian-cv-tir-1405.pdf"
           target="_blank"
           className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
         >
@@ -93,7 +93,7 @@ export default function CV() {
 
             <div className="mt-4">
               <h3 className="text-lg font-semibold print:text-black">
-                Senior Front End Developer | Qame
+                Senior Front End Developer | Qame (Remote, Vietnam)
               </h3>
               <p className=" print:text-black">Aug 2025 - May 2026</p>
               <ul className="list-disc list-inside mt-2 print:text-black">

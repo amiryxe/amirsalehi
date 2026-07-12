@@ -180,7 +180,9 @@ export default function PersianCV() {
               <div className="flex justify-between">
                 <h3 className="font-semibold">
                   :: توسعه‌دهنده ارشد فرانت‌اند در{' '}
-                  <span className="font-extrabold">Qame</span>
+                  <span className="font-extrabold">
+                    Qame <span className="font-normal">(دورکاری · ویتنام)</span>
+                  </span>
                 </h3>
 
                 <span className="border-b border-black border-dashed italic">
