@@ -101,6 +101,28 @@ export default function CV() {
 
             <div className="mt-4">
               <h3 className="text-lg font-semibold print:text-black">
+                Full Stack Developer | NamaPuya (Personal Project)
+              </h3>
+              <p className=" print:text-black">July 2026 – Present</p>
+              <ul className="list-disc list-inside mt-2 print:text-black">
+                <li>
+                  Built a decision-making platform for material selection with 3D simulation, a
+                  virtual showroom, and Visual AI for architecture — virtual presentation of stone
+                  products (
+                  <a href="https://namapuya.ir" className="hover:underline print:text-black">
+                    namapuya.ir
+                  </a>
+                  ).
+                </li>
+                <li>
+                  Personal project focused on AI-assisted visual experience for architectural
+                  material choices.
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold print:text-black">
                 Senior Front End Developer | Qame (Remote, Vietnam)
               </h3>
               <p className=" print:text-black">Aug 2025 - May 2026</p>
@@ -112,7 +134,11 @@ export default function CV() {
                 Developed and maintained the administration dashboard and brand management system.
                 </li>
                 <li>
-                Developed the Qame website and landing pages for sponsor campaigns.
+                Developed the Qame website and landing pages for sponsor campaigns (
+                  <a href="https://qame.app" className="hover:underline print:text-black">
+                    qame.app
+                  </a>
+                  ).
                 </li>
               </ul>
             </div>
@@ -129,7 +155,11 @@ export default function CV() {
                 </li>
                 <li>
                   Led the development of the Snowa customer club’s user panel and management
-                  dashboard.
+                  dashboard (
+                  <a href="https://club.snowa.ir" className="hover:underline print:text-black">
+                    club.snowa.ir
+                  </a>
+                  ).
                 </li>
                 <li>
                   Worked on various other projects such as GTM monitoring system, live lottery
@@ -144,7 +174,17 @@ export default function CV() {
               </h3>
               <p className=" print:text-black">Jan 2018 - Feb 2020</p>
               <ul className="list-disc list-inside mt-2 print:text-black">
-                <li>Front-end development for Shokolat Loyalty software using Laravel.</li>
+                <li>
+                  Front-end development for Shokolat Loyalty software using Laravel (
+                  <a href="https://my.shokolat.app/" className="hover:underline print:text-black">
+                    my.shokolat.app
+                  </a>
+                  ,{' '}
+                  <a href="https://shokolat.app" className="hover:underline print:text-black">
+                    shokolat.app
+                  </a>
+                  ).
+                </li>
               </ul>
             </div>
 
@@ -156,7 +196,11 @@ export default function CV() {
               <ul className="list-disc list-inside mt-2 print:text-black">
                 <li>
                   Contributed to the front-end development of web projects in Qatar using the Django
-                  framework.
+                  framework, including{' '}
+                  <a href="https://leltajmil.com" className="hover:underline print:text-black">
+                    leltajmil.com
+                  </a>
+                  .
                 </li>
                 <li>Worked on a Virtual University project as a major contribution.</li>
               </ul>
@@ -177,6 +221,18 @@ export default function CV() {
               Projects
             </h2>
             <ul className="list-disc list-inside mt-2 print:text-black">
+              <li>
+                <strong>NamaPuya - Material decision & Visual AI platform:</strong>{' '}
+                <a href="https://namapuya.ir" className="hover:underline print:text-black">
+                  namapuya.ir
+                </a>
+              </li>
+              <li>
+                <strong>Qame:</strong>{' '}
+                <a href="https://qame.app" className="hover:underline print:text-black">
+                  qame.app
+                </a>
+              </li>
               <li>
                 <strong>Snowa Loyalty Club:</strong>{' '}
                 <a href="https://club.snowa.ir" className="hover:underline print:text-black">
@@ -199,6 +255,16 @@ export default function CV() {
                 <strong>Leltajmil:</strong>{' '}
                 <a href="https://leltajmil.com" className="hover:underline print:text-black">
                   leltajmil.com
+                </a>
+              </li>
+              <li>
+                <strong>Shokolat Loyalty:</strong>{' '}
+                <a href="https://my.shokolat.app/" className="hover:underline print:text-black">
+                  my.shokolat.app
+                </a>
+                ,{' '}
+                <a href="https://shokolat.app" className="hover:underline print:text-black">
+                  shokolat.app
                 </a>
               </li>
             </ul>

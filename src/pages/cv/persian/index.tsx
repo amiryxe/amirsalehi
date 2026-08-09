@@ -179,6 +179,35 @@ export default function PersianCV() {
             <div className="text-xs">
               <div className="flex justify-between">
                 <h3 className="font-semibold">
+                  :: توسعه‌دهنده فول‌استک در{' '}
+                  <span className="font-extrabold">
+                    نماپویا <span className="font-normal">(پروژه شخصی)</span>
+                  </span>
+                </h3>
+
+                <span className="border-b border-black border-dashed italic">
+                  تیر ۱۴۰۵ - اکنون
+                </span>
+              </div>
+
+              <p className="text-justify mt-1 font-normal">
+                پلتفرم تصمیم‌گیری برای انتخاب متریال؛ شبیه‌سازی سه‌بعدی، شوروم مجازی و Visual AI
+                برای معماری — ارائه مجازی محصولات سنگ. یک پروژه شخصی با تمرکز بر هوش مصنوعی و
+                تجربه بصری در معماری.{' '}
+                <a
+                  href="https://namapuya.ir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-blue-800"
+                >
+                  namapuya.ir
+                </a>
+              </p>
+            </div>
+
+            <div className="text-xs mt-4">
+              <div className="flex justify-between">
+                <h3 className="font-semibold">
                   :: توسعه‌دهنده ارشد فرانت‌اند در{' '}
                   <span className="font-extrabold">
                     Qame <span className="font-normal">(دورکاری · ویتنام)</span>
@@ -200,7 +229,15 @@ export default function PersianCV() {
                 </li>
 
                 <li className="before:content-['-'] before:ml-1 mb-1">
-                  توسعه وب‌سایت Qame و لندینگ‌پیج‌های کمپین‌های اسپانسر.
+                  توسعه وب‌سایت Qame و لندینگ‌پیج‌های کمپین‌های اسپانسر |{' '}
+                  <a
+                    href="https://qame.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-blue-800"
+                  >
+                    qame.app
+                  </a>
                 </li>
               </ul>
             </div>
