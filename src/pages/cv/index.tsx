@@ -9,7 +9,7 @@ export default function CV() {
     <Layout>
       <div className="flex gap-3">
         <a
-          href="/cv/amirsalehi-en-cv-july2026.pdf"
+          href="/cv/amirsalehi-en-cv-aug-2026.pdf"
           target="_blank"
           className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
         >
@@ -17,11 +17,11 @@ export default function CV() {
         </a>
 
         <a
-          href="/cv/amirsalehi-persian-cv-tir-1405.pdf"
+          href="/cv/amirsalehi-persian-cv-mordad-1405.pdf"
           target="_blank"
           className="inline-block bg-lime-950 rounded-sm px-3 text-white mb-6"
         >
-          دانلود رزومه فارسی
+          دانلود نسخه PDF رزومه | فارسی
         </a>
 
         <Link
