@@ -27,7 +27,9 @@ const BlogPost = ({ data, children, pageContext }: any) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   const { categories, hero_image_alt, title } = data.mdx.frontmatter
   const imageAlt = /[\u0600-\u06FF]/.test(hero_image_alt || '') ? hero_image_alt : title
-  const related = data.related.nodes
+  const related = [...data.related.nodes, ...data.recent.nodes]
+    .filter((post: any, i: number, arr: any[]) => arr.findIndex((p: any) => p.id === post.id) === i)
+    .slice(0, 3)
 
   React.useEffect(() => {
     const getData = async () => {
@@ -78,7 +80,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
   }
 
   return (
-    <Layout>
+    <Layout narrow>
       <h1 className="text-2xl font-extrabold">{data.mdx.frontmatter.title}</h1>
       <em>{toJalali(data.mdx.frontmatter.date)}</em>
 
@@ -110,13 +112,23 @@ const BlogPost = ({ data, children, pageContext }: any) => {
       </div>
 
       {related.length > 0 && (
-        <section className="mt-12">
-          <h2 className="font-bold text-lg mb-4">نوشته‌های مرتبط</h2>
-          <ul className="flex flex-col gap-2">
+        <section className="mt-12" aria-labelledby="related-title">
+          <h2 id="related-title" className="font-bold text-lg mb-4">
+            نوشته‌های مرتبط
+          </h2>
+          <ul className="grid gap-4 sm:grid-cols-3">
             {related.map((post: any) => (
               <li key={post.id}>
-                <Link to={`/blog/${post.frontmatter.slug}/`} className="underline hover:text-lime-500">
-                  {post.frontmatter.title}
+                <Link
+                  to={`/blog/${post.frontmatter.slug}/`}
+                  className="group flex h-full flex-col justify-between gap-3 rounded-xl border border-gray-200 bg-white/60 p-4 no-underline transition hover:-translate-y-0.5 hover:border-lime-500 hover:shadow-md dark:border-gray-700 dark:bg-gray-800/60 dark:hover:border-lime-400"
+                >
+                  <span className="font-bold leading-7 group-hover:text-lime-700 dark:group-hover:text-lime-400">
+                    {post.frontmatter.title}
+                  </span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                    {toJalali(post.frontmatter.date)}
+                  </span>
                 </Link>
               </li>
             ))}
@@ -220,6 +232,21 @@ export const query = graphql`
         frontmatter {
           title
           slug
+          date
+        }
+      }
+    }
+    recent: allMdx(
+      filter: { id: { ne: $id }, frontmatter: { draft: { ne: true }, type: { ne: "project" } } }
+      sort: { frontmatter: { date: DESC } }
+      limit: 3
+    ) {
+      nodes {
+        id
+        frontmatter {
+          title
+          slug
+          date
         }
       }
     }

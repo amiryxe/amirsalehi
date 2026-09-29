@@ -3,7 +3,15 @@ import * as React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ pageTitle, children }: { pageTitle?: string; children: React.ReactNode }) => {
+const Layout = ({
+  pageTitle,
+  narrow = false,
+  children,
+}: {
+  pageTitle?: string
+  narrow?: boolean
+  children: React.ReactNode
+}) => {
   return (
     <div className="container py-8 flex flex-col min-h-screen max-sm:py-2" dir="rtl">
       <svg
@@ -24,7 +32,7 @@ const Layout = ({ pageTitle, children }: { pageTitle?: string; children: React.R
 
       <Header />
 
-      <main className="py-16 max-sm:py-8">
+      <main className={`py-16 max-sm:py-8 w-full ${narrow ? 'max-w-3xl mx-auto' : ''}`}>
         {pageTitle && <h1 className="font-bold mb-10 text-xl">{pageTitle}</h1>}
         {children}
       </main>
