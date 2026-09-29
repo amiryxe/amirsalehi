@@ -29,11 +29,15 @@ const BlogPost = ({ data, children, pageContext }: any) => {
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await client
-        .collection('comments')
-        .getFullList({ filter: `postSlug="${pageContext.frontmatter__slug}"&&isApproved=true` })
+      try {
+        const res = await client
+          .collection('comments')
+          .getFullList({ filter: `postSlug="${pageContext.frontmatter__slug}"&&isApproved=true` })
 
-      setComments(res)
+        setComments(res)
+      } catch (err) {
+        console.warn('Failed to load comments', err)
+      }
     }
 
     getData()
