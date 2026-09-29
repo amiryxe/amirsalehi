@@ -1,0 +1,1 @@
+(self.webpackChunkamirsalehi=self.webpackChunkamirsalehi||[]).push([[471],{1471:function(){}}]);
