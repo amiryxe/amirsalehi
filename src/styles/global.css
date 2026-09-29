@@ -99,11 +99,29 @@ pre {
   @apply mb-8;
 }
 
-p code {
+/* Inline code */
+.post :not(pre) > code {
   direction: ltr;
+  unicode-bidi: isolate;
   word-spacing: 0;
+  font-size: 0.9em;
+  @apply inline-block h-fit rounded-md border border-lime-200 bg-lime-50 px-1.5 leading-6 text-lime-800 dark:border-lime-400/20 dark:bg-lime-400/10 dark:text-lime-300;
+}
 
-  @apply bg-gray-200/55 text-dark rounded-sm px-1 inline-block h-fit leading-6;
+/* Code blocks */
+.post .grvsc-container {
+  @apply my-8 rounded-xl border border-gray-200 text-sm leading-6 shadow-sm dark:border-white/10;
+  background-color: #f7f8fa !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+html.dark .post .grvsc-container {
+  background-color: #1e222b !important;
+}
+
+.post .grvsc-container code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @media print {

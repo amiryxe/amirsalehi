@@ -123,9 +123,9 @@ const config: GatsbyConfig = {
               require('gatsby-remark-vscode').remarkPlugin,
               {
                 theme: {
-                  default: 'Quiet Light',
+                  default: 'Light+ (default light)',
                   parentSelector: {
-                    'html[class=dark]': 'Monokai',
+                    'html.dark': 'Dark+ (default dark)',
                   },
                 },
               },
