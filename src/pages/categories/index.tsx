@@ -26,6 +26,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="تمام دسته‌بندی‌ها" />
+export const Head = () => <Seo title="دسته‌بندی‌ها" pathname="/categories/" description="همه دسته‌بندی‌های نوشته‌های بلاگ امیر صالحی." />
 
 export default CategoriesList

@@ -38,6 +38,10 @@ export const query = graphql`
   }
 `
 
-export const Head = ({ pageContext }: any) => <Seo title={`دسته‌بندی ${pageContext.category}`} />
+export const Head = ({ pageContext }: any) => <Seo
+    title={`دسته‌بندی ${pageContext.category}`}
+    pathname={`/categories/${pageContext.slug}/`}
+    description={`نوشته‌های امیر صالحی در دسته‌بندی ${pageContext.category}`}
+  />
 
 export default CategoryPage

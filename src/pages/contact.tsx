@@ -121,6 +121,6 @@ const ContactPage = () => {
   )
 }
 
-export const Head = () => <Seo title="تماس با من" />
+export const Head = () => <Seo title="تماس با من" pathname="/contact/" description="برای همکاری، پروژه یا هر سوالی از طریق فرم تماس با امیر صالحی در ارتباط باشید." />
 
 export default ContactPage

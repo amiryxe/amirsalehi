@@ -319,4 +319,4 @@ export default function CV() {
   )
 }
 
-export const Head = () => <Seo title="رزومه امیر صالحی" />
+export const Head = () => <Seo title="رزومه" pathname="/cv/" description="رزومه امیر صالحی، توسعه‌دهنده نرم‌افزار و فرانت‌اند." />

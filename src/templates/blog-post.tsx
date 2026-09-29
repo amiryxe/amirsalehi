@@ -3,7 +3,7 @@ import { useState } from 'react'
 import PocketBase from 'pocketbase'
 
 import { graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -187,13 +187,17 @@ const BlogPost = ({ data, children, pageContext }: any) => {
 export const query = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
+      excerpt(pruneLength: 160)
       frontmatter {
         title
+        slug
+        isoDate: date
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
         hero_image {
           childImageSharp {
             gatsbyImageData
+            og: gatsbyImageData(layout: FIXED, width: 1200, formats: [JPG])
           }
         }
         categories {
@@ -205,6 +209,19 @@ export const query = graphql`
   }
 `
 
-export const Head = ({ data }: any) => <Seo title={data.mdx.frontmatter.title} />
+export const Head = ({ data }: any) => {
+  const { frontmatter, excerpt } = data.mdx
+  const image = frontmatter.hero_image?.childImageSharp?.og
+
+  return (
+    <Seo
+      title={frontmatter.title}
+      description={excerpt}
+      pathname={`/blog/${frontmatter.slug}/`}
+      image={image ? getSrc(image) : undefined}
+      article={{ publishedTime: frontmatter.isoDate }}
+    />
+  )
+}
 
 export default BlogPost

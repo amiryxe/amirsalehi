@@ -462,4 +462,4 @@ export default function PersianCV() {
   )
 }
 
-export const Head = () => <Seo title="رزومه فارسی امیر صالحی" />
+export const Head = () => <Seo title="رزومه فارسی" pathname="/cv/persian/" description="رزومه فارسی امیر صالحی، توسعه‌دهنده نرم‌افزار و فرانت‌اند." />

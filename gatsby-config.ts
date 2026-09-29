@@ -8,6 +8,9 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `امیر صالحی`,
     siteUrl: `https://amirsalehi.ir`,
+    description: `وبسایت شخصی امیر صالحی، توسعه‌دهنده نرم‌افزار و علاقه‌مند به دنیای جاوااسکریپت؛ نوشته‌هایی درباره جاوااسکریپت، ری‌اکت و برنامه‌نویسی وب، رزومه و پروژه‌ها.`,
+    image: `/og-default.jpg`,
+    twitterUsername: `@amiryxe`,
   },
   graphqlTypegen: true,
   plugins: [

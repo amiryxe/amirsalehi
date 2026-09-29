@@ -11,6 +11,6 @@ const AboutPage = () => {
   )
 }
 
-export const Head = () => <Seo title="درباره من" />
+export const Head = () => <Seo title="درباره من" pathname="/about/" description="درباره امیر صالحی، توسعه‌دهنده نرم‌افزار و علاقه‌مند به جاوااسکریپت." />
 
 export default AboutPage

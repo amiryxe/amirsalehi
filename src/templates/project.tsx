@@ -19,13 +19,21 @@ const ProjectPage = ({ data, children, pageContext }: any) => {
 export const query = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
+      excerpt(pruneLength: 160)
       frontmatter {
         title
+        slug
       }
     }
   }
 `
 
-export const Head = ({ data }: any) => <Seo title={data.mdx.frontmatter.title} />
+export const Head = ({ data }: any) => (
+  <Seo
+    title={data.mdx.frontmatter.title}
+    description={data.mdx.excerpt}
+    pathname={`/projects/${data.mdx.frontmatter.slug}/`}
+  />
+)
 
 export default ProjectPage

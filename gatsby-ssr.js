@@ -15,7 +15,9 @@ const applyDarkModeClass = `
 })();
 `;
 
-export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setPreBodyComponents, setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: 'fa', dir: 'rtl' })
+
   const script = createElement("script", {
     dangerouslySetInnerHTML: {
       __html: applyDarkModeClass,

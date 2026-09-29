@@ -29,7 +29,7 @@ const BlogPage = ({ data }: any) => {
   )
 }
 
-export const Head = () => <Seo title="بلاگ امیر صالحی" />
+export const Head = () => <Seo title="بلاگ" pathname="/blog/" description="نوشته‌های امیر صالحی درباره جاوااسکریپت، ری‌اکت و برنامه‌نویسی وب." />
 
 export const query = graphql`
   query {
