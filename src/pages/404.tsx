@@ -18,7 +18,5 @@ const NotFoundPage: React.FC<PageProps> = () => {
 export default NotFoundPage
 
 export const Head: HeadFC = () => (
-  <Seo title="چیزی پیدا نشد">
-    <meta name="robots" content="noindex" />
-  </Seo>
+  <Seo title="چیزی پیدا نشد" noindex />
 )

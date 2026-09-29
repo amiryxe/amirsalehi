@@ -18,7 +18,7 @@ export default function PersianCV() {
               <div className="relative">
                 <StaticImage
                   src="../../../images/amir-circle.png"
-                  alt="amir pic"
+                  alt="امیر صالحی"
                   quality={100}
                   style={{ width: 100 }}
                   // className="relative z-[1]"

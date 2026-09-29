@@ -14,20 +14,20 @@ export default function MainBanner() {
           سلام! من <strong className="font-extrabold">امیر</strong> هستم 👋
         </h1>
 
-        <h3 className="sm:text-2xl text-gray-700 dark:text-gray-300">
+        <p className="sm:text-2xl text-gray-700 dark:text-gray-300">
           یک{' '}
           <strong className="font-extrabold text-lime-900 dark:text-lime-500">
             توسعه‌دهنده نرم‌افزار
           </strong>{' '}
           علاقه‌مند به دنیای جاوااسکریپت که بیشتر تجربه‌ام در زمینه‌ی توسعه و طراحی پروژه‌های تحت وب
           بوده
-        </h3>
+        </p>
       </div>
 
       <StaticImage
         src="../images/amir.png"
-        alt="amir pic"
-        quality={100}
+        alt="امیر صالحی"
+        quality={85}
         width={420}
         className="max-sm:mt-6"
       />

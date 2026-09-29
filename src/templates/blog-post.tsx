@@ -25,7 +25,9 @@ const BlogPost = ({ data, children, pageContext }: any) => {
   const [comments, setComments] = useState<any>([])
 
   const image = getImage(data.mdx.frontmatter.hero_image)
-  const { categories } = data.mdx.frontmatter
+  const { categories, hero_image_alt, title } = data.mdx.frontmatter
+  const imageAlt = /[\u0600-\u06FF]/.test(hero_image_alt || '') ? hero_image_alt : title
+  const related = data.related.nodes
 
   React.useEffect(() => {
     const getData = async () => {
@@ -84,7 +86,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
         <div className="flex justify-center">
           <GatsbyImage
             image={image!}
-            alt={data.mdx.frontmatter.hero_image_alt}
+            alt={imageAlt}
             className="my-8 rounded-md"
           />
         </div>
@@ -106,6 +108,21 @@ const BlogPost = ({ data, children, pageContext }: any) => {
           ))}
         </div>
       </div>
+
+      {related.length > 0 && (
+        <section className="mt-12">
+          <h2 className="font-bold text-lg mb-4">نوشته‌های مرتبط</h2>
+          <ul className="flex flex-col gap-2">
+            {related.map((post: any) => (
+              <li key={post.id}>
+                <Link to={`/blog/${post.frontmatter.slug}/`} className="underline hover:text-lime-500">
+                  {post.frontmatter.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <form onSubmit={submitHandler} className="space-y-8 mt-12">
         <div className="flex gap-4 max-sm:flex-col">
@@ -185,7 +202,27 @@ const BlogPost = ({ data, children, pageContext }: any) => {
 }
 
 export const query = graphql`
-  query ($id: String) {
+  query ($id: String, $categorySlugs: [String]) {
+    related: allMdx(
+      filter: {
+        id: { ne: $id }
+        frontmatter: {
+          draft: { ne: true }
+          type: { ne: "project" }
+          categories: { elemMatch: { slug: { in: $categorySlugs } } }
+        }
+      }
+      sort: { frontmatter: { date: DESC } }
+      limit: 3
+    ) {
+      nodes {
+        id
+        frontmatter {
+          title
+          slug
+        }
+      }
+    }
     mdx(id: { eq: $id }) {
       excerpt(pruneLength: 160)
       frontmatter {

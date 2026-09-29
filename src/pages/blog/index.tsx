@@ -11,13 +11,13 @@ const BlogPage = ({ data }: any) => {
       {data.allMdx.nodes.map((node: any) => (
         <div key={node.id}>
           <Link to={`/blog/${node.frontmatter.slug}`} className="mb-8 flex-col inline-flex">
-            <h3
+            <h2
               className="before:content-[''] before:w-3 before:h-3 before:bg-lime-200 
             before:inline-block before:rounded-full before:ml-3 max-sm:flex max-sm:before:mt-[.6rem] 
             max-sm:before:h-auto max-sm:before:w-2"
             >
               <span className="w-full">{node.frontmatter.title}</span>
-            </h3>
+            </h2>
 
             <em className="text-sm max-sm:indent-5">{toJalali(node.frontmatter.date)}</em>
           </Link>
@@ -35,7 +35,7 @@ export const query = graphql`
   query {
     allMdx(
       sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { type: { ne: "project" } } }
+      filter: { frontmatter: { type: { ne: "project" }, draft: { ne: true } } }
     ) {
       nodes {
         frontmatter {

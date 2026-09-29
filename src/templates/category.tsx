@@ -12,12 +12,12 @@ const CategoryPage = ({ data, pageContext }: any) => {
     <Layout pageTitle={`نوشته‌های مربوط به دسته‌بندی ${category}:`}>
       {posts.map((post: any) => (
         <Link key={post.id} to={'/blog/' + post.frontmatter.slug} className="mb-4 flex flex-col">
-          <h3
+          <h2
             className="before:content-[''] before:w-3 before:h-3 before:bg-lime-200 before:inline-block 
           before:rounded-full before:ml-4"
           >
             {post.frontmatter.title}
-          </h3>
+          </h2>
         </Link>
       ))}
     </Layout>
@@ -26,7 +26,12 @@ const CategoryPage = ({ data, pageContext }: any) => {
 
 export const query = graphql`
   query ($slug: String) {
-    allMdx(filter: { frontmatter: { categories: { elemMatch: { slug: { eq: $slug } } } } }) {
+    allMdx(
+      filter: {
+        frontmatter: { draft: { ne: true }, categories: { elemMatch: { slug: { eq: $slug } } } }
+      }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         id
         frontmatter {

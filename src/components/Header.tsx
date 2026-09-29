@@ -69,7 +69,12 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-4 max-md:gap-3">
-        <button type="button" className="p-3 max-md:p-2" onClick={toggleTheme}>
+        <button
+          type="button"
+          className="p-3 max-md:p-2"
+          onClick={toggleTheme}
+          aria-label="تغییر حالت تیره و روشن"
+        >
           {isDarkMode ? <SunIcon className="h-5" /> : <MoonIcon className="h-5" />}
         </button>
 
@@ -77,7 +82,7 @@ export default function Header() {
           تماس با من
         </Link>
 
-        <button type="button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button type="button" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="باز کردن منو">
           <Bars3Icon className="h-6 pr-1 hidden max-md:block" />
         </button>
       </div>
@@ -94,7 +99,12 @@ export default function Header() {
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } fixed top-0 left-0 h-screen bg-slate-900/90 z-10 duration-300 w-3/4 text-white`}
       >
-        <button type="button" className="text-white p-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button
+          type="button"
+          className="text-white p-3"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="بستن منو"
+        >
           <XMarkIcon className="h-6" />
         </button>
 

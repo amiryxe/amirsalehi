@@ -7,4 +7,4 @@ export default function Videos() {
   return <Layout pageTitle="ویدئوها">Videos</Layout>
 }
 
-export const Head = () => <Seo title="ویدئوها" pathname="/videos/" />
+export const Head = () => <Seo noindex title="ویدئوها" pathname="/videos/" />

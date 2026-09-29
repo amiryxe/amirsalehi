@@ -20,7 +20,7 @@ const CategoriesList = ({ data }: any) => {
 
 export const query = graphql`
   {
-    allMdx {
+    allMdx(filter: { frontmatter: { draft: { ne: true } } }) {
       distinct(field: { frontmatter: { categories: { slug: SELECT } } })
     }
   }

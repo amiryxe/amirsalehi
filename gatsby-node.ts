@@ -15,12 +15,23 @@ exports.onCreateNode = ({ node, actions, getNode }: any) => {
   }
 }
 
+exports.createSchemaCustomization = ({ actions }: any) => {
+  actions.createTypes(`
+    type Mdx implements Node {
+      frontmatter: MdxFrontmatter
+    }
+    type MdxFrontmatter {
+      draft: Boolean
+    }
+  `)
+}
+
 exports.createPages = async ({ graphql, actions }: any) => {
   const { createPage } = actions
 
   const result = await graphql(`
     {
-      allMdx {
+      allMdx(filter: { frontmatter: { draft: { ne: true } } }) {
         nodes {
           id
           internal {
@@ -57,7 +68,11 @@ exports.createPages = async ({ graphql, actions }: any) => {
     createPage({
       path: `/blog/${node.frontmatter.slug}/`,
       component: `${blogTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
-      context: { id: node.id, frontmatter__slug: node.frontmatter.slug },
+      context: {
+        id: node.id,
+        frontmatter__slug: node.frontmatter.slug,
+        categorySlugs: (node.frontmatter.categories || []).map((c: any) => c.slug),
+      },
     })
   })
 
@@ -68,6 +83,20 @@ exports.createPages = async ({ graphql, actions }: any) => {
       component: `${projectTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: { id: node.id, frontmatter__slug: node.frontmatter.slug },
     })
+  })
+
+  // Old duplicate URLs (/projects/<post>/ and /categories/slug/) redirect to the right page
+  const redirectTemplate = path.resolve(`src/templates/redirect.tsx`)
+  const projectSlugs = new Set(projects.map((node: any) => node.frontmatter.slug))
+  const redirects = posts
+    .filter((node: any) => !projectSlugs.has(node.frontmatter.slug))
+    .map((node: any) => ({
+      from: `/projects/${node.frontmatter.slug}/`,
+      to: `/blog/${node.frontmatter.slug}/`,
+    }))
+  redirects.push({ from: '/categories/slug/', to: '/categories/' })
+  redirects.forEach(({ from, to }: any) => {
+    createPage({ path: from, component: redirectTemplate, context: { to, noindex: true } })
   })
 
   // Extract all unique categories

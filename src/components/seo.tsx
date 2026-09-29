@@ -7,10 +7,11 @@ type SeoProps = {
   pathname?: string
   image?: string
   article?: { publishedTime?: string }
+  noindex?: boolean
   children?: React.ReactNode
 }
 
-const Seo = ({ title, description, pathname, image, article, children }: SeoProps) => {
+const Seo = ({ title, description, pathname, image, article, noindex, children }: SeoProps) => {
   const { site } = useStaticQuery(graphql`
     query SeoQuery {
       site {
@@ -51,6 +52,7 @@ const Seo = ({ title, description, pathname, image, article, children }: SeoProp
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
       {pathname && <link rel="canonical" href={url} />}
+      {noindex && <meta name="robots" content="noindex" />}
 
       <meta property="og:site_name" content={meta.title} />
       <meta property="og:locale" content="fa_IR" />
