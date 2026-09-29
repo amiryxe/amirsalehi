@@ -5,9 +5,9 @@ import PocketBase from 'pocketbase'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-import Layout from '../../components/layout'
-import Seo from '../../components/seo'
-import toJalali from '../../helpers/toJalali'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
+import toJalali from '../helpers/toJalali'
 import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 
 const url = process.env.POCKETBASE_URL

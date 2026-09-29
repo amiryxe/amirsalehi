@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import Layout from '../../components/layout'
-import Seo from '../../components/seo'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const CategoryPage = ({ data, pageContext }: any) => {
   const { category, slug } = pageContext

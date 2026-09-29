@@ -23,7 +23,12 @@ exports.createPages = async ({ graphql, actions }: any) => {
       allMdx {
         nodes {
           id
+          internal {
+            contentFilePath
+          }
           frontmatter {
+            slug
+            type
             categories {
               name
               slug
@@ -42,7 +47,28 @@ exports.createPages = async ({ graphql, actions }: any) => {
     return
   }
 
-  const posts = result.data.allMdx.nodes
+  const nodes = result.data.allMdx.nodes
+  const posts = nodes.filter((node: any) => node.frontmatter.type !== 'project')
+  const projects = nodes.filter((node: any) => node.frontmatter.type === 'project')
+
+  // Blog posts and projects each get a page only under their own route
+  const blogTemplate = path.resolve(`src/templates/blog-post.tsx`)
+  posts.forEach((node: any) => {
+    createPage({
+      path: `/blog/${node.frontmatter.slug}/`,
+      component: `${blogTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: { id: node.id, frontmatter__slug: node.frontmatter.slug },
+    })
+  })
+
+  const projectTemplate = path.resolve(`src/templates/project.tsx`)
+  projects.forEach((node: any) => {
+    createPage({
+      path: `/projects/${node.frontmatter.slug}/`,
+      component: `${projectTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: { id: node.id, frontmatter__slug: node.frontmatter.slug },
+    })
+  })
 
   // Extract all unique categories
   const categories = new Map()
@@ -55,7 +81,7 @@ exports.createPages = async ({ graphql, actions }: any) => {
   })
 
   // Create a page for each category
-  const categoryTemplate = path.resolve(`src/pages/categories/slug.tsx`)
+  const categoryTemplate = path.resolve(`src/templates/category.tsx`)
   categories.forEach((name, slug) => {
     createPage({
       path: `/categories/${slug}/`,
