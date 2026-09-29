@@ -27,7 +27,7 @@ const Seo = ({ title, description, pathname, image, article, children }: SeoProp
 
   const meta = site.siteMetadata
   const siteUrl = meta.siteUrl.replace(/\/$/, '')
-  const fullTitle = title && !title.includes(meta.title) ? `${title} | ${meta.title}` : meta.title
+  const fullTitle = !title ? meta.title : title.includes(meta.title) ? title : `${title} | ${meta.title}`
   const metaDescription = description || meta.description
   const url = `${siteUrl}${pathname || ''}`
   const imagePath = image || meta.image
