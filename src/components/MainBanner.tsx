@@ -23,10 +23,16 @@ export default function MainBanner() {
       </div>
 
       <div className="relative max-sm:mt-6">
-        {/* Very soft, edge-less glow behind the portrait */}
+        {/* Dot grid pattern behind the portrait, fading out at the edges */}
         <div
           aria-hidden="true"
-          className="absolute -z-10 left-1/2 bottom-0 -translate-x-1/2 w-[110%] h-2/3 rounded-full bg-lime-200/50 blur-[90px] dark:bg-lime-400/10"
+          className="absolute -z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] h-[110%] text-lime-700/45 dark:text-lime-400/30"
+          style={{
+            backgroundImage: 'radial-gradient(currentColor 1.6px, transparent 1.6px)',
+            backgroundSize: '18px 18px',
+            maskImage: 'radial-gradient(ellipse at center, #000 35%, transparent 70%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, #000 35%, transparent 70%)',
+          }}
         />
         <StaticImage src="../images/amir.png" alt="امیر صالحی" quality={85} width={420} />
       </div>
