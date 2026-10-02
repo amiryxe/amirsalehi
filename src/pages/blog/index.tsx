@@ -3,28 +3,16 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
-import toJalali from '../../helpers/toJalali'
+import PostCard from '../../components/PostCard'
 
 const BlogPage = ({ data }: any) => {
   return (
-    <Layout pageTitle="تازه‌ترین نوشته‌ها">
-      {data.allMdx.nodes.map((node: any) => (
-        <div key={node.id}>
-          <Link to={`/blog/${node.frontmatter.slug}`} className="mb-8 flex-col inline-flex">
-            <h2
-              className="before:content-[''] before:w-3 before:h-3 before:bg-lime-200 
-            before:inline-block before:rounded-full before:ml-3 max-sm:flex max-sm:before:mt-[.6rem] 
-            max-sm:before:h-auto max-sm:before:w-2"
-            >
-              <span className="w-full">{node.frontmatter.title}</span>
-            </h2>
-
-            <em className="text-sm max-sm:indent-5">{toJalali(node.frontmatter.date)}</em>
-          </Link>
-
-          <br />
-        </div>
-      ))}
+    <Layout pageTitle="تازه‌ترین نوشته‌ها" narrow>
+      <div className="flex flex-col gap-5">
+        {data.allMdx.nodes.map((node: any) => (
+          <PostCard key={node.id} post={node} />
+        ))}
+      </div>
     </Layout>
   )
 }
@@ -38,10 +26,15 @@ export const query = graphql`
       filter: { frontmatter: { type: { ne: "project" }, draft: { ne: true } } }
     ) {
       nodes {
+        excerpt(pruneLength: 140)
         frontmatter {
           date(formatString: "MMMM D, YYYY h:mm A")
           title
           slug
+          categories {
+            name
+            slug
+          }
         }
         id
       }

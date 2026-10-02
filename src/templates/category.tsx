@@ -1,25 +1,21 @@
 import * as React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+import PostCard from '../components/PostCard'
 
 const CategoryPage = ({ data, pageContext }: any) => {
   const { category, slug } = pageContext
   const posts = data.allMdx.nodes
 
   return (
-    <Layout pageTitle={`نوشته‌های مربوط به دسته‌بندی ${category}:`}>
-      {posts.map((post: any) => (
-        <Link key={post.id} to={'/blog/' + post.frontmatter.slug} className="mb-4 flex flex-col">
-          <h2
-            className="before:content-[''] before:w-3 before:h-3 before:bg-lime-200 before:inline-block 
-          before:rounded-full before:ml-4"
-          >
-            {post.frontmatter.title}
-          </h2>
-        </Link>
-      ))}
+    <Layout pageTitle={`نوشته‌های مربوط به دسته‌بندی ${category}:`} narrow>
+      <div className="flex flex-col gap-5">
+        {posts.map((post: any) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </div>
     </Layout>
   )
 }
@@ -34,9 +30,15 @@ export const query = graphql`
     ) {
       nodes {
         id
+        excerpt(pruneLength: 140)
         frontmatter {
           title
           slug
+          date(formatString: "MMMM D, YYYY h:mm A")
+          categories {
+            name
+            slug
+          }
         }
       }
     }
