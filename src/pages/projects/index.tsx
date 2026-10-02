@@ -14,7 +14,7 @@ const ProjectsPage = ({ data }: any) => {
       <p className="-mt-6 mb-10 text-gray-600 dark:text-gray-300">
         محصول‌هایی که از ایده تا اجرا خودم ساختم و نگهداری می‌کنم.
       </p>
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project: any) => (
           <ProjectCard key={project.id} project={project} />
         ))}
