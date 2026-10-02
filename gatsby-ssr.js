@@ -30,7 +30,7 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents, setHtmlA
   setHeadComponents([
     <link
       rel="preload"
-      href="/fonts/estedad/Estedad[KSHD,wght].woff2"
+      href="/fonts/estedad/Estedad[wght].woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
