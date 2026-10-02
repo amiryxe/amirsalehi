@@ -22,6 +22,11 @@ exports.createSchemaCustomization = ({ actions }: any) => {
     }
     type MdxFrontmatter {
       draft: Boolean
+      order: Int
+      url: String
+      tagline: String
+      color: String
+      tags: [String]
     }
   `)
 }
