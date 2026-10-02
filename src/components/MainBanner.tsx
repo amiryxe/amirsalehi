@@ -23,14 +23,10 @@ export default function MainBanner() {
       </div>
 
       <div className="relative max-sm:mt-6">
-        {/* Soft glow + circle behind the portrait */}
+        {/* Very soft, edge-less glow behind the portrait */}
         <div
           aria-hidden="true"
-          className="absolute -z-10 left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 w-[90%] aspect-square rounded-full bg-lime-300/40 blur-3xl dark:bg-lime-400/15"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute -z-10 left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 w-[72%] aspect-square rounded-full bg-gradient-to-tr from-lime-200 via-lime-100 to-emerald-100 ring-1 ring-lime-300/60 dark:from-lime-500/25 dark:via-lime-400/10 dark:to-emerald-400/10 dark:ring-lime-400/20"
+          className="absolute -z-10 left-1/2 bottom-0 -translate-x-1/2 w-[110%] h-2/3 rounded-full bg-lime-200/50 blur-[90px] dark:bg-lime-400/10"
         />
         <StaticImage src="../images/amir.png" alt="امیر صالحی" quality={85} width={420} />
       </div>
