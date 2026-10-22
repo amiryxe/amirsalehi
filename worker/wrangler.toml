@@ -3,7 +3,7 @@ main = "src/index.js"
 compatibility_date = "2026-10-01"
 
 # After deploy: Cloudflare dashboard > Workers > amirsalehi-api > Settings > Domains & Routes > add custom domain api.amirsalehi.ir
-# routes = [{ pattern = "api.amirsalehi.ir", custom_domain = true }]
+routes = [{ pattern = "api.amirsalehi.ir", custom_domain = true }]
 workers_dev = false
 
 [vars]
@@ -12,4 +12,4 @@ ALLOWED_ORIGINS = "https://amirsalehi.ir,https://www.amirsalehi.ir,http://localh
 [[d1_databases]]
 binding = "DB"
 database_name = "amirsalehi"
-database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+database_id = "46d53c29-9dca-4bed-84c6-6c414ab9e0c2"
