@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState } from 'react'
-import PocketBase from 'pocketbase'
 
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
@@ -10,14 +9,7 @@ import Seo from '../components/seo'
 import toJalali from '../helpers/toJalali'
 import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 
-const url = process.env.POCKETBASE_URL
-const client = new PocketBase(url)
-
-client.beforeSend = function (url, options: any) {
-  options.headers['x_token'] = process.env.POCKETBASE_KEY
-
-  return { url, options }
-}
+const API_URL = process.env.GATSBY_API_URL
 
 const BlogPost = ({ data, children, pageContext }: any) => {
   const [loading, setLoading] = useState(false)
@@ -34,11 +26,13 @@ const BlogPost = ({ data, children, pageContext }: any) => {
   React.useEffect(() => {
     const getData = async () => {
       try {
-        const res = await client
-          .collection('comments')
-          .getFullList({ filter: `postSlug="${pageContext.frontmatter__slug}"&&isApproved=true` })
+        const res = await fetch(
+          `${API_URL}/comments?slug=${encodeURIComponent(pageContext.frontmatter__slug)}`
+        )
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        const list = await res.json()
 
-        setComments(res)
+        setComments(list.map((c: any) => ({ id: c.id, name: c.name, text: c.body, created: c.created_at })))
       } catch (err) {
         console.warn('Failed to load comments', err)
       }
@@ -53,18 +47,22 @@ const BlogPost = ({ data, children, pageContext }: any) => {
     const { name, email, text } = e.target as any
 
     const data = {
-      postSlug: pageContext.frontmatter__slug,
+      slug: pageContext.frontmatter__slug,
       name: name.value,
       email: email.value,
-      text: text.value,
+      body: text.value,
+      website: (e.target as any).website?.value || '',
     }
 
     setLoading(true)
 
-    await client
-      .collection('comments')
-      .create(data)
-      .then(() => {
+    await fetch(`${API_URL}/comments`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
         setAlert('دیدگاه شما با موفقیت ارسال شد و پس از تائید نمایش داده می‌شود')
 
         name.value = ''
@@ -137,6 +135,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
       )}
 
       <form onSubmit={submitHandler} className="space-y-8 mt-12">
+        <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
         <div className="flex gap-4 max-sm:flex-col">
           <div className="sm:w-1/2 flex flex-col gap-5">
             <div>

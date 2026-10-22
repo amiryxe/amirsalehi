@@ -4,16 +4,7 @@ import { useState } from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-import PocketBase from 'pocketbase'
-
-const url = process.env.POCKETBASE_URL
-const client = new PocketBase(url)
-
-client.beforeSend = function (url, options: any) {
-  options.headers['x_token'] = process.env.POCKETBASE_KEY
-
-  return { url, options }
-}
+const API_URL = process.env.GATSBY_API_URL
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false)
@@ -28,15 +19,19 @@ const ContactPage = () => {
       name: name.value,
       email: email.value,
       phone: phone.value,
-      message: message.value,
+      body: message.value,
+      website: (e.target as any).website?.value || '',
     }
 
     setLoading(true)
 
-    await client
-      .collection('contacts')
-      .create(data)
-      .then(() => {
+    await fetch(`${API_URL}/contact`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
         setAlert('پیام شما با موفقیت ارسال شد')
 
         name.value = ''
@@ -61,6 +56,7 @@ const ContactPage = () => {
         </p>
 
         <form onSubmit={submitHandler} className="space-y-8">
+          <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
           <div>
             <label htmlFor="name" className="block mb-2 text-sm ">
               نام شما

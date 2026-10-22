@@ -37,7 +37,6 @@
     "gatsby-transformer-sharp": "^5.13.1",
     "gh-pages": "^6.1.1",
     "motion": "^12.4.7",
-    "pocketbase": "^0.21.1",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
