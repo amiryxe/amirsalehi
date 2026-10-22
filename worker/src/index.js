@@ -1,3 +1,5 @@
+import { ADMIN_HTML } from './admin.js'
+
 // Tiny API for amirsalehi.ir: comments + contact form (Cloudflare Worker + D1)
 
 const LIMITS = { name: 80, email: 120, phone: 30, body: 3000, slug: 200 }
@@ -6,7 +8,7 @@ const RATE = { max: 5, windowSec: 600 } // 5 posts per 10 min per IP
 const json = (data, status, cors) =>
   new Response(JSON.stringify(data), {
     status,
-    headers: { 'content-type': 'application/json; charset=utf-8', ...cors },
+    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...cors },
   })
 
 const clean = (v, max) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
@@ -45,7 +47,14 @@ async function readBody(req) {
   }
 }
 
-const isAdmin = (req, env) => env.ADMIN_TOKEN && req.headers.get('x-admin-token') === env.ADMIN_TOKEN
+function isAdmin(req, env) {
+  const a = new TextEncoder().encode(req.headers.get('x-admin-token') || '')
+  const b = new TextEncoder().encode(env.ADMIN_TOKEN || '')
+  if (!b.length) return false
+  let diff = a.length ^ b.length
+  for (let i = 0; i < b.length; i++) diff |= (a[i] ?? 0) ^ b[i]
+  return diff === 0
+}
 
 export default {
   async fetch(req, env) {
@@ -54,6 +63,17 @@ export default {
 
     const url = new URL(req.url)
     const path = url.pathname.replace(/\/+$/, '')
+
+    if (path === '/admin' && req.method === 'GET') {
+      return new Response(ADMIN_HTML, {
+        headers: {
+          'content-type': 'text/html; charset=utf-8',
+          'cache-control': 'no-store',
+          'x-frame-options': 'DENY',
+          'referrer-policy': 'no-referrer',
+        },
+      })
+    }
 
     try {
       // Public: approved comments of a post
