@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: var(--font-estedad), Tahoma, sans-serif;
+  font-family: var(--font-estedad), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
   background: var(--color-main-background);
   color: var(--color-main-text);
