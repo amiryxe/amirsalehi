@@ -79,8 +79,8 @@ const BlogPost = ({ data, children, pageContext }: any) => {
 
   return (
     <Layout narrow>
-      <h1 className="text-2xl font-extrabold">{data.mdx.frontmatter.title}</h1>
-      <em>{toJalali(data.mdx.frontmatter.date)}</em>
+      <h1 className="text-2xl sm:text-3xl font-extrabold leading-snug mb-2">{data.mdx.frontmatter.title}</h1>
+      <em className="text-sm not-italic text-gray-500 dark:text-gray-400">{toJalali(data.mdx.frontmatter.date)}</em>
 
       {image && (
         <div className="flex justify-center">
@@ -111,7 +111,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
 
       {related.length > 0 && (
         <section className="mt-12" aria-labelledby="related-title">
-          <h2 id="related-title" className="font-bold text-lg mb-4">
+          <h2 id="related-title" className="font-bold text-xl mb-4">
             نوشته‌های مرتبط
           </h2>
           <ul className="grid gap-4 sm:grid-cols-3">
@@ -121,7 +121,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
                   to={`/blog/${post.frontmatter.slug}/`}
                   className="group flex h-full flex-col justify-between gap-3 rounded-xl border border-gray-200 bg-white/60 p-4 no-underline transition hover:-translate-y-0.5 hover:border-lime-500 hover:shadow-md dark:border-gray-700 dark:bg-gray-800/60 dark:hover:border-lime-400"
                 >
-                  <span className="font-bold leading-7 group-hover:text-lime-700 dark:group-hover:text-lime-400">
+                  <span className="font-semibold leading-7 group-hover:text-lime-700 dark:group-hover:text-lime-400">
                     {post.frontmatter.title}
                   </span>
                   <span className="text-xs text-gray-500 dark:text-gray-400">
@@ -145,7 +145,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
               <input
                 type="text"
                 id="name"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                className="block p-3 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
               />
             </div>
 
@@ -156,7 +156,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
               <input
                 type="text"
                 id="email"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                className="block p-3 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
                 placeholder="you@email.com"
                 dir="ltr"
               />
@@ -172,7 +172,7 @@ const BlogPost = ({ data, children, pageContext }: any) => {
                 required
                 id="text"
                 rows={6}
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
+                className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                 placeholder="متن دیدگاه خود را وارد کنید..."
               ></textarea>
             </div>
@@ -200,8 +200,8 @@ const BlogPost = ({ data, children, pageContext }: any) => {
           {comments.map((comment: any) => (
             <div key={comment.id} className="mb-4 border border-gray-200 rounded-md p-3">
               <div className="flex justify-between">
-                <h3 className="font-bold">{comment.name}</h3>
-                <em>{toJalali(comment.created)}</em>
+                <h3 className="font-semibold">{comment.name}</h3>
+                <em className="text-sm not-italic text-gray-500 dark:text-gray-400">{toJalali(comment.created)}</em>
               </div>
               <p>{comment.text}</p>
             </div>

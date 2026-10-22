@@ -37,12 +37,12 @@ export default function PostCard({ post }: Props) {
           </div>
         )}
 
-        <h2 className="text-lg font-bold leading-8 group-hover:text-lime-700 dark:group-hover:text-lime-400">
+        <h2 className="text-lg font-bold leading-8 sm:text-xl group-hover:text-lime-700 dark:group-hover:text-lime-400">
           {title}
         </h2>
 
         {post.excerpt && (
-          <p className="text-sm leading-7 text-gray-600 dark:text-gray-300">{post.excerpt}</p>
+          <p className="text-[0.9375rem] leading-7 text-gray-600 dark:text-gray-300">{post.excerpt}</p>
         )}
 
         <time className="text-xs text-gray-500 dark:text-gray-400">{toJalali(date)}</time>

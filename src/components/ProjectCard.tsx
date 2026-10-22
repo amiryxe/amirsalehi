@@ -43,22 +43,22 @@ export default function ProjectCard({ project }: { project: any }) {
       <div className="flex flex-1 flex-col gap-2 border-t border-gray-200 p-4 dark:border-gray-700">
         <div className="flex items-center gap-2">
           <span className="h-2 w-2 rounded-full" style={{ backgroundColor: accent }} />
-          <h2 className="text-base font-extrabold">{title}</h2>
+          <h2 className="text-lg font-bold">{title}</h2>
           {url && (
-            <span className="ms-auto text-[11px] text-gray-500 dark:text-gray-400" dir="ltr">
+            <span className="ms-auto text-xs text-gray-500 dark:text-gray-400" dir="ltr">
               {domainOf(url)}
             </span>
           )}
         </div>
 
-        <p className="text-xs leading-6 text-gray-600 dark:text-gray-300">{tagline}</p>
+        <p className="text-sm leading-7 text-gray-600 dark:text-gray-300">{tagline}</p>
 
         {tags && tags.length > 0 && (
           <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
             {tags.map((tag: string) => (
               <span
                 key={tag}
-                className="rounded-full border px-2 py-0.5 text-[11px] leading-4"
+                className="rounded-full border px-2 py-0.5 text-xs leading-5"
                 style={{ borderColor: `${accent}55`, color: accent, backgroundColor: `${accent}12` }}
               >
                 {tag}

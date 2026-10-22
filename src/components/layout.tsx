@@ -33,7 +33,7 @@ const Layout = ({
       <Header />
 
       <main className={`py-16 max-sm:py-8 w-full ${narrow ? 'max-w-3xl mx-auto' : ''}`}>
-        {pageTitle && <h1 className="font-bold mb-10 text-xl">{pageTitle}</h1>}
+        {pageTitle && <h1 className="font-bold mb-10 text-2xl sm:text-3xl">{pageTitle}</h1>}
         {children}
       </main>
 

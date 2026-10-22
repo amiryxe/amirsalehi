@@ -21,9 +21,9 @@ const ProjectPage = ({ data, children }: any) => {
       <header className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <span className="h-3 w-3 rounded-full" style={{ backgroundColor: accent }} />
-          <h1 className="text-3xl font-extrabold">{title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-extrabold leading-snug">{title}</h1>
         </div>
-        {tagline && <p className="text-lg leading-9 text-gray-600 dark:text-gray-300">{tagline}</p>}
+        {tagline && <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">{tagline}</p>}
 
         <div className="flex flex-wrap items-center gap-3">
           {url && (

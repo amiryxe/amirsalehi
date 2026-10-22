@@ -15,9 +15,26 @@ body {
   min-height: 100vh;
   background: var(--color-main-background);
   color: var(--color-main-text);
-  font-weight: 300;
-  line-height: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern';
+}
+
+/* Light text on dark backgrounds looks heavier; trim the variable weight a bit */
+.dark body {
+  font-weight: 370;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.5;
 }
 
 .dark {
@@ -49,23 +66,23 @@ body {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .post {
-  word-spacing: 2px;
+  word-spacing: 1px;
 }
 
 .post h2 {
-  @apply text-2xl font-bold mb-2;
+  @apply text-xl sm:text-2xl font-bold mt-12 mb-4;
 }
 
 .post h3 {
-  @apply text-xl font-bold mb-2;
+  @apply text-lg sm:text-xl font-semibold mt-8 mb-3;
 }
 
 .post p {
-  @apply mb-8 text-lg leading-10 font-light;
+  @apply mb-6 text-[1.0625rem] sm:text-lg leading-[1.9];
 }
 
 .post a {
@@ -82,7 +99,7 @@ strong {
 
 .post ol li,
 .post ul li {
-  @apply mb-3;
+  @apply mb-3 text-[1.0625rem] sm:text-lg leading-[1.9];
 }
 
 pre {
