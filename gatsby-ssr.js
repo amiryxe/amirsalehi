@@ -26,15 +26,4 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents, setHtmlA
   })
 
   setPreBodyComponents([script])
-
-  setHeadComponents([
-    <link
-      rel="preload"
-      href="/fonts/estedad/Estedad[wght].woff2"
-      as="font"
-      type="font/woff2"
-      crossOrigin="anonymous"
-      key="estedadFont"
-    />,
-  ])
 }

@@ -8888,6 +8888,11 @@ neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+next-persian-fonts@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/next-persian-fonts/-/next-persian-fonts-1.4.0.tgz#aa6f0a84a7f06b2868e3c9ae9799d39ed3481aa3"
+  integrity sha512-sq8W86hppmEXrDF1EyyT0omULGsqYj5+2h11L4j9pg1g7ATLCxF1CGQoSjpKiQ+1QiaqHtcwJdNz8B69XO9X+Q==
+
 next-tick@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"

@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'EstedadFont';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url(/fonts/estedad/Estedad[wght].woff2) format('woff2');
-}
-
 :root {
   --color-dark: #161920;
   --color-dark-hover: #3c4a71;
@@ -20,7 +11,7 @@
 }
 
 body {
-  font-family: EstedadFont;
+  font-family: var(--font-estedad), Tahoma, sans-serif;
   min-height: 100vh;
   background: var(--color-main-background);
   color: var(--color-main-text);
