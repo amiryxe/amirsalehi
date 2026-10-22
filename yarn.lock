@@ -9544,11 +9544,6 @@ plist@^3.0.1:
     base64-js "^1.5.1"
     xmlbuilder "^15.1.1"
 
-pocketbase@^0.21.1:
-  version "0.21.5"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.21.5.tgz#10714d264f80e5c6654a54b41ecb2219da497939"
-  integrity sha512-bnI/uinnQps+ElSlzxkc4yvwuSFfKcoszDtXH/4QT2FhGq2mJVUvDlxn+rjRXVntUjPfmMG5LEPZ1eGqV6ssog==
-
 possible-typed-array-names@^1.0.0, possible-typed-array-names@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/possible-typed-array-names/-/possible-typed-array-names-1.1.0.tgz#93e3582bc0e5426586d9d07b79ee40fc841de4ae"
